@@ -22,6 +22,9 @@ func (s *superStar) mustHandleBody() (stars github.Stars) {
 func uagent(r *http.Request) *http.Request {
 	r.Header.Set("Accept", "application/json")
 	r.Header.Set("User-Agent", "yunginnanet/urastar 0.1")
+	if len(pat) > 0 {
+		r.Header.Set("Authorization", "token "+pat)
+	}
 	return r
 }
 

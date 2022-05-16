@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"os"
 	"strings"
@@ -13,6 +14,8 @@ import (
 
 	"git.tcp.direct/kayos/urastar/github"
 )
+
+var pat string
 
 type superStar struct {
 	name      string
@@ -26,7 +29,7 @@ func getArgs() []string {
 	zerolog.SetGlobalLevel(zerolog.DebugLevel)
 	var args []string
 	for i, a := range os.Args {
-		if i == 0 {
+		if i == 0 || a == "_" {
 			continue
 		}
 		switch {
@@ -34,6 +37,13 @@ func getArgs() []string {
 			zerolog.SetGlobalLevel(zerolog.TraceLevel)
 		case a == "-q", a == "--quiet":
 			zerolog.SetGlobalLevel(zerolog.Disabled)
+		case a == "--token" || a == "-t":
+			if len(os.Args) == i-1 {
+				println("bad syntax, missing token")
+				os.Exit(1)
+			}
+			pat = os.Args[i+1]
+			os.Args[i+1] = "_"
 		default:
 			if a != "-v" && a != "--trace" {
 				args = append(args, a)
@@ -41,7 +51,7 @@ func getArgs() []string {
 		}
 	}
 	if len(args) < 1 {
-		println("\t\t\tur a star!!11\n\nUsage: \n\n" + os.Args[0] + " [-q/-v] <target> [target] [target] [...]\n")
+		println("\t\t\tur a star!!11\n\nUsage: \n\n" + os.Args[0] + "[-t <gh pat>] [-q/-v] <target> [target] [target] [...]\n")
 		os.Exit(1)
 	}
 	return args
@@ -126,7 +136,7 @@ func (s *superStar) getAllStars() {
 		if done {
 			break
 		}
-		time.Sleep(250 * time.Millisecond)
+		time.Sleep(555 * time.Millisecond)
 	}
 }
 
@@ -134,8 +144,7 @@ func (s *superStar) shoot() {
 	var err error
 	target := github.URLStarsFromName(s.name)
 	s.log.Trace().Msgf("HEAD %s", target)
-
-	s.last, err = http.DefaultClient.Head(target)
+	s.head(target)
 	s.hLog(err)
 	s.log.Trace().Msg("head success")
 	s.getAllStars()
@@ -147,7 +156,7 @@ func (s *superStar) shoot() {
 		if err != nil {
 			s.log.Fatal().Caller().Err(err).Msg("failed to pretty print")
 		}
-		println(string(ib))
+		_, _ = fmt.Fprint(os.Stdout, string(ib))
 	}
 }
 
@@ -156,10 +165,13 @@ func main() {
 
 	for _, superstar := range getArgs() {
 		l := zerolog.New(zerolog.NewConsoleWriter(func(w *zerolog.ConsoleWriter) {
-			w.Out = os.Stdout
+			w.Out = os.Stderr
 			w.NoColor = false
 			w.TimeFormat = time.Stamp
 		})).With().Timestamp().Logger()
+		if len(pat) > 0 {
+			log.Debug().Msg("using API token for authentication")
+		}
 		super := &superStar{
 			name: superstar,
 			log:  &l,
@@ -169,5 +181,4 @@ func main() {
 		super.shoot()
 		super.log.Info().Int("count", len(super.stars)).Msg("fin")
 	}
-
 }

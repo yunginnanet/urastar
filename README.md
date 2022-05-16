@@ -2,7 +2,9 @@
 
 retrieves github stars wow
 
+probably use a personal access token or you're gonna get ratelimited to shit
+
 ### Usage:
 
-`urastar [-q/-v] <target> [target] [target] [...]`
+`urastar [-t <gh pat>] [-q/-v] <target> [target] [target] [...]`
 
