@@ -17,7 +17,421 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out *Star) {
+func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out *User) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "login":
+			out.Login = string(in.String())
+		case "id":
+			out.Id = int(in.Int())
+		case "avatar_url":
+			out.AvatarURL = string(in.String())
+		case "url":
+			out.Url = string(in.String())
+		case "html_url":
+			out.HTMLURL = string(in.String())
+		case "followers_url":
+			out.FollowersUrl = string(in.String())
+		case "following_url":
+			out.FollowingUrl = string(in.String())
+		case "gists_url":
+			out.GistsUrl = string(in.String())
+		case "starred_url":
+			out.StarredUrl = string(in.String())
+		case "subscriptions_url":
+			out.SubscriptionsUrl = string(in.String())
+		case "organizations_url":
+			out.OrganizationsUrl = string(in.String())
+		case "repos_url":
+			out.ReposUrl = string(in.String())
+		case "events_url":
+			out.EventsUrl = string(in.String())
+		case "received_events_url":
+			out.ReceivedEventsUrl = string(in.String())
+		case "type":
+			out.Type = string(in.String())
+		case "site_admin":
+			out.SiteAdmin = bool(in.Bool())
+		case "name":
+			out.Name = string(in.String())
+		case "company":
+			out.Company = string(in.String())
+		case "blog":
+			out.Blog = string(in.String())
+		case "location":
+			out.Location = string(in.String())
+		case "email":
+			if m, ok := out.Email.(easyjson.Unmarshaler); ok {
+				m.UnmarshalEasyJSON(in)
+			} else if m, ok := out.Email.(json.Unmarshaler); ok {
+				_ = m.UnmarshalJSON(in.Raw())
+			} else {
+				out.Email = in.Interface()
+			}
+		case "hireable":
+			if m, ok := out.Hireable.(easyjson.Unmarshaler); ok {
+				m.UnmarshalEasyJSON(in)
+			} else if m, ok := out.Hireable.(json.Unmarshaler); ok {
+				_ = m.UnmarshalJSON(in.Raw())
+			} else {
+				out.Hireable = in.Interface()
+			}
+		case "bio":
+			if m, ok := out.Bio.(easyjson.Unmarshaler); ok {
+				m.UnmarshalEasyJSON(in)
+			} else if m, ok := out.Bio.(json.Unmarshaler); ok {
+				_ = m.UnmarshalJSON(in.Raw())
+			} else {
+				out.Bio = in.Interface()
+			}
+		case "twitter_username":
+			out.TwitterUsername = string(in.String())
+		case "public_repos":
+			out.PublicRepos = int(in.Int())
+		case "public_gists":
+			out.PublicGists = int(in.Int())
+		case "followers":
+			out.Followers = int(in.Int())
+		case "following":
+			out.Following = int(in.Int())
+		case "created_at":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.CreatedAt).UnmarshalJSON(data))
+			}
+		case "updated_at":
+			if data := in.Raw(); in.Ok() {
+				in.AddError((out.UpdatedAt).UnmarshalJSON(data))
+			}
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, in User) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"login\":"
+		out.RawString(prefix[1:])
+		out.String(string(in.Login))
+	}
+	{
+		const prefix string = ",\"id\":"
+		out.RawString(prefix)
+		out.Int(int(in.Id))
+	}
+	{
+		const prefix string = ",\"avatar_url\":"
+		out.RawString(prefix)
+		out.String(string(in.AvatarURL))
+	}
+	{
+		const prefix string = ",\"url\":"
+		out.RawString(prefix)
+		out.String(string(in.Url))
+	}
+	{
+		const prefix string = ",\"html_url\":"
+		out.RawString(prefix)
+		out.String(string(in.HTMLURL))
+	}
+	{
+		const prefix string = ",\"followers_url\":"
+		out.RawString(prefix)
+		out.String(string(in.FollowersUrl))
+	}
+	{
+		const prefix string = ",\"following_url\":"
+		out.RawString(prefix)
+		out.String(string(in.FollowingUrl))
+	}
+	{
+		const prefix string = ",\"gists_url\":"
+		out.RawString(prefix)
+		out.String(string(in.GistsUrl))
+	}
+	{
+		const prefix string = ",\"starred_url\":"
+		out.RawString(prefix)
+		out.String(string(in.StarredUrl))
+	}
+	{
+		const prefix string = ",\"subscriptions_url\":"
+		out.RawString(prefix)
+		out.String(string(in.SubscriptionsUrl))
+	}
+	{
+		const prefix string = ",\"organizations_url\":"
+		out.RawString(prefix)
+		out.String(string(in.OrganizationsUrl))
+	}
+	{
+		const prefix string = ",\"repos_url\":"
+		out.RawString(prefix)
+		out.String(string(in.ReposUrl))
+	}
+	{
+		const prefix string = ",\"events_url\":"
+		out.RawString(prefix)
+		out.String(string(in.EventsUrl))
+	}
+	{
+		const prefix string = ",\"received_events_url\":"
+		out.RawString(prefix)
+		out.String(string(in.ReceivedEventsUrl))
+	}
+	{
+		const prefix string = ",\"type\":"
+		out.RawString(prefix)
+		out.String(string(in.Type))
+	}
+	{
+		const prefix string = ",\"site_admin\":"
+		out.RawString(prefix)
+		out.Bool(bool(in.SiteAdmin))
+	}
+	{
+		const prefix string = ",\"name\":"
+		out.RawString(prefix)
+		out.String(string(in.Name))
+	}
+	{
+		const prefix string = ",\"company\":"
+		out.RawString(prefix)
+		out.String(string(in.Company))
+	}
+	{
+		const prefix string = ",\"blog\":"
+		out.RawString(prefix)
+		out.String(string(in.Blog))
+	}
+	{
+		const prefix string = ",\"location\":"
+		out.RawString(prefix)
+		out.String(string(in.Location))
+	}
+	{
+		const prefix string = ",\"email\":"
+		out.RawString(prefix)
+		if m, ok := in.Email.(easyjson.Marshaler); ok {
+			m.MarshalEasyJSON(out)
+		} else if m, ok := in.Email.(json.Marshaler); ok {
+			out.Raw(m.MarshalJSON())
+		} else {
+			out.Raw(json.Marshal(in.Email))
+		}
+	}
+	{
+		const prefix string = ",\"hireable\":"
+		out.RawString(prefix)
+		if m, ok := in.Hireable.(easyjson.Marshaler); ok {
+			m.MarshalEasyJSON(out)
+		} else if m, ok := in.Hireable.(json.Marshaler); ok {
+			out.Raw(m.MarshalJSON())
+		} else {
+			out.Raw(json.Marshal(in.Hireable))
+		}
+	}
+	{
+		const prefix string = ",\"bio\":"
+		out.RawString(prefix)
+		if m, ok := in.Bio.(easyjson.Marshaler); ok {
+			m.MarshalEasyJSON(out)
+		} else if m, ok := in.Bio.(json.Marshaler); ok {
+			out.Raw(m.MarshalJSON())
+		} else {
+			out.Raw(json.Marshal(in.Bio))
+		}
+	}
+	{
+		const prefix string = ",\"twitter_username\":"
+		out.RawString(prefix)
+		out.String(string(in.TwitterUsername))
+	}
+	{
+		const prefix string = ",\"public_repos\":"
+		out.RawString(prefix)
+		out.Int(int(in.PublicRepos))
+	}
+	{
+		const prefix string = ",\"public_gists\":"
+		out.RawString(prefix)
+		out.Int(int(in.PublicGists))
+	}
+	{
+		const prefix string = ",\"followers\":"
+		out.RawString(prefix)
+		out.Int(int(in.Followers))
+	}
+	{
+		const prefix string = ",\"following\":"
+		out.RawString(prefix)
+		out.Int(int(in.Following))
+	}
+	{
+		const prefix string = ",\"created_at\":"
+		out.RawString(prefix)
+		out.Raw((in.CreatedAt).MarshalJSON())
+	}
+	{
+		const prefix string = ",\"updated_at\":"
+		out.RawString(prefix)
+		out.Raw((in.UpdatedAt).MarshalJSON())
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v User) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v User) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *User) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *User) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub(l, v)
+}
+func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out *Result) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "User":
+			(out.User).UnmarshalEasyJSON(in)
+		case "Result":
+			if in.IsNull() {
+				in.Skip()
+				out.Stars = nil
+			} else {
+				in.Delim('[')
+				if out.Stars == nil {
+					if !in.IsDelim(']') {
+						out.Stars = make([]Star, 0, 0)
+					} else {
+						out.Stars = []Star{}
+					}
+				} else {
+					out.Stars = (out.Stars)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v1 Star
+					(v1).UnmarshalEasyJSON(in)
+					out.Stars = append(out.Stars, v1)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(out *jwriter.Writer, in Result) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"User\":"
+		out.RawString(prefix[1:])
+		(in.User).MarshalEasyJSON(out)
+	}
+	{
+		const prefix string = ",\"Result\":"
+		out.RawString(prefix)
+		if in.Stars == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+			out.RawString("null")
+		} else {
+			out.RawByte('[')
+			for v2, v3 := range in.Stars {
+				if v2 > 0 {
+					out.RawByte(',')
+				}
+				(v3).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v Result) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v Result) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *Result) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *Result) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(l, v)
+}
+func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(in *jlexer.Lexer, out *Star) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -37,9 +451,9 @@ func easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out 
 		}
 		switch key {
 		case "id":
-			out.Id = int(in.Int())
+			out.ID = int(in.Int())
 		case "node_id":
-			out.NodeId = string(in.String())
+			out.NodeID = string(in.String())
 		case "name":
 			out.Name = string(in.String())
 		case "full_name":
@@ -47,7 +461,7 @@ func easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out 
 		case "private":
 			out.Private = bool(in.Bool())
 		case "owner":
-			easyjson2b897f11Decode(in, &out.Owner)
+			easyjson619ac83dDecode(in, &out.Owner)
 		case "html_url":
 			out.HtmlUrl = string(in.String())
 		case "description":
@@ -222,7 +636,7 @@ func easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out 
 						NodeId string  `json:"node_id"`
 					})
 				}
-				easyjson2b897f11Decode1(in, out.License)
+				easyjson619ac83dDecode1(in, out.License)
 			}
 		case "allow_forking":
 			out.AllowForking = bool(in.Bool())
@@ -244,9 +658,9 @@ func easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out 
 					out.Topics = (out.Topics)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v1 string
-					v1 = string(in.String())
-					out.Topics = append(out.Topics, v1)
+					var v4 string
+					v4 = string(in.String())
+					out.Topics = append(out.Topics, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -271,19 +685,19 @@ func easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out 
 		in.Consumed()
 	}
 }
-func easyjson2b897f11EncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, in Star) {
+func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(out *jwriter.Writer, in Star) {
 	out.RawByte('{')
 	first := true
 	_ = first
 	{
 		const prefix string = ",\"id\":"
 		out.RawString(prefix[1:])
-		out.Int(int(in.Id))
+		out.Int(int(in.ID))
 	}
 	{
 		const prefix string = ",\"node_id\":"
 		out.RawString(prefix)
-		out.String(string(in.NodeId))
+		out.String(string(in.NodeID))
 	}
 	{
 		const prefix string = ",\"name\":"
@@ -303,7 +717,7 @@ func easyjson2b897f11EncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 	{
 		const prefix string = ",\"owner\":"
 		out.RawString(prefix)
-		easyjson2b897f11Encode(out, in.Owner)
+		easyjson619ac83dEncode(out, in.Owner)
 	}
 	{
 		const prefix string = ",\"html_url\":"
@@ -639,7 +1053,7 @@ func easyjson2b897f11EncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		if in.License == nil {
 			out.RawString("null")
 		} else {
-			easyjson2b897f11Encode1(out, *in.License)
+			easyjson619ac83dEncode1(out, *in.License)
 		}
 	}
 	{
@@ -659,11 +1073,11 @@ func easyjson2b897f11EncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v2, v3 := range in.Topics {
-				if v2 > 0 {
+			for v5, v6 := range in.Topics {
+				if v5 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v3))
+				out.String(string(v6))
 			}
 			out.RawByte(']')
 		}
@@ -699,27 +1113,27 @@ func easyjson2b897f11EncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 // MarshalJSON supports json.Marshaler interface
 func (v Star) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson2b897f11EncodeGitTcpDirectKayosUrastarGithub(&w, v)
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Star) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson2b897f11EncodeGitTcpDirectKayosUrastarGithub(w, v)
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Star) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(&r, v)
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Star) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson2b897f11DecodeGitTcpDirectKayosUrastarGithub(l, v)
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(l, v)
 }
-func easyjson2b897f11Decode1(in *jlexer.Lexer, out *struct {
+func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 	Key    string  `json:"key"`
 	Name   string  `json:"name"`
 	SpdxId string  `json:"spdx_id"`
@@ -772,7 +1186,7 @@ func easyjson2b897f11Decode1(in *jlexer.Lexer, out *struct {
 		in.Consumed()
 	}
 }
-func easyjson2b897f11Encode1(out *jwriter.Writer, in struct {
+func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
 	Key    string  `json:"key"`
 	Name   string  `json:"name"`
 	SpdxId string  `json:"spdx_id"`
@@ -813,7 +1227,7 @@ func easyjson2b897f11Encode1(out *jwriter.Writer, in struct {
 	}
 	out.RawByte('}')
 }
-func easyjson2b897f11Decode(in *jlexer.Lexer, out *struct {
+func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 	Login             string `json:"login"`
 	Id                int    `json:"id"`
 	AvatarUrl         string `json:"avatar_url"`
@@ -891,7 +1305,7 @@ func easyjson2b897f11Decode(in *jlexer.Lexer, out *struct {
 		in.Consumed()
 	}
 }
-func easyjson2b897f11Encode(out *jwriter.Writer, in struct {
+func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 	Login             string `json:"login"`
 	Id                int    `json:"id"`
 	AvatarUrl         string `json:"avatar_url"`

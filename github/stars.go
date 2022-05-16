@@ -2,18 +2,23 @@ package github
 
 import "time"
 
+type Result struct {
+	User  User
+	Stars []Star
+}
+
 type Star struct {
-	Id       int    `json:"id"`
-	NodeId   string `json:"node_id"`
+	ID       int    `json:"id"`
+	NodeID   string `json:"node_id"`
 	Name     string `json:"name"`
 	FullName string `json:"full_name"`
 	Private  bool   `json:"private"`
 	Owner    struct {
 		Login             string `json:"login"`
-		Id                int    `json:"id"`
-		AvatarUrl         string `json:"avatar_url"`
-		Url               string `json:"url"`
-		HtmlUrl           string `json:"html_url"`
+		ID                int    `json:"id"`
+		AvatarURL         string `json:"avatar_url"`
+		URL               string `json:"url"`
+		HTMLURL           string `json:"html_url"`
 		FollowersUrl      string `json:"followers_url"`
 		FollowingUrl      string `json:"following_url"`
 		GistsUrl          string `json:"gists_url"`

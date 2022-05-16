@@ -1,13 +1,13 @@
 package main
 
 import (
-	"encoding/json"
 	"io"
 	"net/http"
 	"os"
 	"strings"
 	"time"
 
+	"github.com/mailru/easyjson"
 	"github.com/rs/zerolog"
 
 	"git.tcp.direct/kayos/urastar/github"
@@ -73,15 +73,16 @@ func nextPage(linkHeader string) (next string, ok bool) {
 }
 
 func mustHandleBody(slog *zerolog.Logger, r *http.Response) (stars []github.Star) {
+	var result github.Result
 	bb, rErr := io.ReadAll(r.Body)
 	if rErr != nil {
 		slog.Fatal().Err(rErr).Msg("failed to read body")
 	}
-	err := json.Unmarshal(bb, &stars)
+	err := easyjson.Unmarshal(bb, &result)
 	if err != nil {
 		slog.Fatal().Err(rErr).Msg("failed to read JSON")
 	}
-	return
+	return result.Stars
 }
 
 func getAllStars(slog *zerolog.Logger, r *http.Response) (userStars []github.Star) {
