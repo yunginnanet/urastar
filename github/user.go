@@ -5,9 +5,9 @@ import "time"
 type User struct {
 	Login             string      `json:"login"`
 	Id                int         `json:"id"`
-	AvatarUrl         string      `json:"avatar_url"`
+	AvatarURL         string      `json:"avatar_url"`
 	Url               string      `json:"url"`
-	HtmlUrl           string      `json:"html_url"`
+	HTMLURL           string      `json:"html_url"`
 	FollowersUrl      string      `json:"followers_url"`
 	FollowingUrl      string      `json:"following_url"`
 	GistsUrl          string      `json:"gists_url"`

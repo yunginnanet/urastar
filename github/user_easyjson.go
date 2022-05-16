@@ -41,11 +41,11 @@ func easyjson9e1087fdDecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out 
 		case "id":
 			out.Id = int(in.Int())
 		case "avatar_url":
-			out.AvatarUrl = string(in.String())
+			out.AvatarURL = string(in.String())
 		case "url":
 			out.Url = string(in.String())
 		case "html_url":
-			out.HtmlUrl = string(in.String())
+			out.HTMLURL = string(in.String())
 		case "followers_url":
 			out.FollowersUrl = string(in.String())
 		case "following_url":
@@ -145,7 +145,7 @@ func easyjson9e1087fdEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 	{
 		const prefix string = ",\"avatar_url\":"
 		out.RawString(prefix)
-		out.String(string(in.AvatarUrl))
+		out.String(string(in.AvatarURL))
 	}
 	{
 		const prefix string = ",\"url\":"
@@ -155,7 +155,7 @@ func easyjson9e1087fdEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 	{
 		const prefix string = ",\"html_url\":"
 		out.RawString(prefix)
-		out.String(string(in.HtmlUrl))
+		out.String(string(in.HTMLURL))
 	}
 	{
 		const prefix string = ",\"followers_url\":"
