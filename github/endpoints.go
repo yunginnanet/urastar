@@ -40,9 +40,3 @@ func URLSearchRepos(query, language string, page, limit int, sort SortBy, order 
 		page, limit,
 		sort, order)
 }
-
-func URLCVESearch(query string) string {
-	return fmt.Sprintf(
-		URLSearchRepos(query+" repo:CVEproject/cvelist extension:json", "", 1, 0, SortUpdated, Descending),
-	)
-}
