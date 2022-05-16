@@ -7,6 +7,7 @@ import (
 	easyjson "github.com/mailru/easyjson"
 	jlexer "github.com/mailru/easyjson/jlexer"
 	jwriter "github.com/mailru/easyjson/jwriter"
+	time "time"
 )
 
 // suppress unused package warning
@@ -132,109 +133,210 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 	out.RawByte('{')
 	first := true
 	_ = first
-	{
+	if in.Login != "" {
 		const prefix string = ",\"login\":"
+		first = false
 		out.RawString(prefix[1:])
 		out.String(string(in.Login))
 	}
-	{
+	if in.Id != 0 {
 		const prefix string = ",\"id\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.Id))
 	}
-	{
+	if in.AvatarURL != "" {
 		const prefix string = ",\"avatar_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.AvatarURL))
 	}
-	{
+	if in.Url != "" {
 		const prefix string = ",\"url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Url))
 	}
-	{
+	if in.HTMLURL != "" {
 		const prefix string = ",\"html_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.HTMLURL))
 	}
-	{
+	if in.FollowersUrl != "" {
 		const prefix string = ",\"followers_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.FollowersUrl))
 	}
-	{
+	if in.FollowingUrl != "" {
 		const prefix string = ",\"following_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.FollowingUrl))
 	}
-	{
+	if in.GistsUrl != "" {
 		const prefix string = ",\"gists_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.GistsUrl))
 	}
-	{
+	if in.StarredUrl != "" {
 		const prefix string = ",\"starred_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.StarredUrl))
 	}
-	{
+	if in.SubscriptionsUrl != "" {
 		const prefix string = ",\"subscriptions_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.SubscriptionsUrl))
 	}
-	{
+	if in.OrganizationsUrl != "" {
 		const prefix string = ",\"organizations_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.OrganizationsUrl))
 	}
-	{
+	if in.ReposUrl != "" {
 		const prefix string = ",\"repos_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.ReposUrl))
 	}
-	{
+	if in.EventsUrl != "" {
 		const prefix string = ",\"events_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.EventsUrl))
 	}
-	{
+	if in.ReceivedEventsUrl != "" {
 		const prefix string = ",\"received_events_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.ReceivedEventsUrl))
 	}
-	{
+	if in.Type != "" {
 		const prefix string = ",\"type\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Type))
 	}
-	{
+	if in.SiteAdmin {
 		const prefix string = ",\"site_admin\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.SiteAdmin))
 	}
-	{
+	if in.Name != "" {
 		const prefix string = ",\"name\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Name))
 	}
-	{
+	if in.Company != "" {
 		const prefix string = ",\"company\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Company))
 	}
-	{
+	if in.Blog != "" {
 		const prefix string = ",\"blog\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Blog))
 	}
-	{
+	if in.Location != "" {
 		const prefix string = ",\"location\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Location))
 	}
-	{
+	if in.Email != nil {
 		const prefix string = ",\"email\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		if m, ok := in.Email.(easyjson.Marshaler); ok {
 			m.MarshalEasyJSON(out)
 		} else if m, ok := in.Email.(json.Marshaler); ok {
@@ -243,9 +345,14 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 			out.Raw(json.Marshal(in.Email))
 		}
 	}
-	{
+	if in.Hireable != nil {
 		const prefix string = ",\"hireable\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		if m, ok := in.Hireable.(easyjson.Marshaler); ok {
 			m.MarshalEasyJSON(out)
 		} else if m, ok := in.Hireable.(json.Marshaler); ok {
@@ -254,9 +361,14 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 			out.Raw(json.Marshal(in.Hireable))
 		}
 	}
-	{
+	if in.Bio != nil {
 		const prefix string = ",\"bio\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		if m, ok := in.Bio.(easyjson.Marshaler); ok {
 			m.MarshalEasyJSON(out)
 		} else if m, ok := in.Bio.(json.Marshaler); ok {
@@ -265,39 +377,74 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 			out.Raw(json.Marshal(in.Bio))
 		}
 	}
-	{
+	if in.TwitterUsername != "" {
 		const prefix string = ",\"twitter_username\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.TwitterUsername))
 	}
-	{
+	if in.PublicRepos != 0 {
 		const prefix string = ",\"public_repos\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.PublicRepos))
 	}
-	{
+	if in.PublicGists != 0 {
 		const prefix string = ",\"public_gists\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.PublicGists))
 	}
-	{
+	if in.Followers != 0 {
 		const prefix string = ",\"followers\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.Followers))
 	}
-	{
+	if in.Following != 0 {
 		const prefix string = ",\"following\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.Following))
 	}
-	{
+	if true {
 		const prefix string = ",\"created_at\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Raw((in.CreatedAt).MarshalJSON())
 	}
-	{
+	if true {
 		const prefix string = ",\"updated_at\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Raw((in.UpdatedAt).MarshalJSON())
 	}
 	out.RawByte('}')
@@ -326,7 +473,275 @@ func (v *User) UnmarshalJSON(data []byte) error {
 func (v *User) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub(l, v)
 }
-func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out *Star) {
+func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out *Stars) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		in.Skip()
+		*out = nil
+	} else {
+		in.Delim('[')
+		if *out == nil {
+			if !in.IsDelim(']') {
+				*out = make(Stars, 0, 0)
+			} else {
+				*out = Stars{}
+			}
+		} else {
+			*out = (*out)[:0]
+		}
+		for !in.IsDelim(']') {
+			var v1 struct {
+				ID       int    `json:"id"`
+				NodeID   string `json:"node_id"`
+				Name     string `json:"name"`
+				FullName string `json:"full_name"`
+				Private  bool   `json:"private"`
+				Owner    struct {
+					Login             string `json:"login"`
+					ID                int    `json:"id"`
+					AvatarURL         string `json:"avatar_url"`
+					URL               string `json:"url"`
+					HTMLURL           string `json:"html_url"`
+					FollowersURL      string `json:"followers_url"`
+					FollowingURL      string `json:"following_url"`
+					GistsURL          string `json:"gists_url"`
+					StarredURL        string `json:"starred_url"`
+					SubscriptionsURL  string `json:"subscriptions_url"`
+					OrganizationsURL  string `json:"organizations_url"`
+					ReposURL          string `json:"repos_url"`
+					EventsURL         string `json:"events_url"`
+					ReceivedEventsURL string `json:"received_events_url"`
+					Type              string `json:"type"`
+					SiteAdmin         bool   `json:"site_admin"`
+				} `json:"owner"`
+				HTMLURL          string      `json:"html_url"`
+				Description      *string     `json:"description"`
+				Fork             bool        `json:"fork"`
+				URL              string      `json:"url"`
+				ForksURL         string      `json:"forks_url"`
+				KeysURL          string      `json:"keys_url"`
+				CollaboratorsURL string      `json:"collaborators_url"`
+				TeamsURL         string      `json:"teams_url"`
+				HooksURL         string      `json:"hooks_url"`
+				IssueEventsURL   string      `json:"issue_events_url"`
+				EventsURL        string      `json:"events_url"`
+				AssigneesURL     string      `json:"assignees_url"`
+				BranchesURL      string      `json:"branches_url"`
+				TagsURL          string      `json:"tags_url"`
+				BlobsURL         string      `json:"blobs_url"`
+				GitTagsURL       string      `json:"git_tags_url"`
+				GitRefsURL       string      `json:"git_refs_url"`
+				TreesURL         string      `json:"trees_url"`
+				StatusesURL      string      `json:"statuses_url"`
+				LanguagesURL     string      `json:"languages_url"`
+				StargazersURL    string      `json:"stargazers_url"`
+				ContributorsURL  string      `json:"contributors_url"`
+				SubscribersURL   string      `json:"subscribers_url"`
+				SubscriptionURL  string      `json:"subscription_url"`
+				CommitsURL       string      `json:"commits_url"`
+				GitCommitsURL    string      `json:"git_commits_url"`
+				CommentsURL      string      `json:"comments_url"`
+				IssueCommentURL  string      `json:"issue_comment_url"`
+				ContentsURL      string      `json:"contents_url"`
+				CompareURL       string      `json:"compare_url"`
+				MergesURL        string      `json:"merges_url"`
+				ArchiveURL       string      `json:"archive_url"`
+				DownloadsURL     string      `json:"downloads_url"`
+				IssuesURL        string      `json:"issues_url"`
+				PullsURL         string      `json:"pulls_url"`
+				MilestonesURL    string      `json:"milestones_url"`
+				NotificationsURL string      `json:"notifications_url"`
+				LabelsURL        string      `json:"labels_url"`
+				ReleasesURL      string      `json:"releases_url"`
+				DeploymentsURL   string      `json:"deployments_url"`
+				CreatedAt        time.Time   `json:"created_at"`
+				UpdatedAt        time.Time   `json:"updated_at"`
+				PushedAt         time.Time   `json:"pushed_at"`
+				GitURL           string      `json:"git_url"`
+				SSHURL           string      `json:"ssh_url"`
+				CloneURL         string      `json:"clone_url"`
+				SvnURL           string      `json:"svn_url"`
+				Homepage         *string     `json:"homepage"`
+				Size             int         `json:"size"`
+				StargazersCount  int         `json:"stargazers_count"`
+				WatchersCount    int         `json:"watchers_count"`
+				Language         *string     `json:"language"`
+				HasIssues        bool        `json:"has_issues"`
+				HasProjects      bool        `json:"has_projects"`
+				HasDownloads     bool        `json:"has_downloads"`
+				HasWiki          bool        `json:"has_wiki"`
+				HasPages         bool        `json:"has_pages"`
+				ForksCount       int         `json:"forks_count"`
+				MirrorURL        interface{} `json:"mirror_url"`
+				Archived         bool        `json:"archived"`
+				Disabled         bool        `json:"disabled"`
+				OpenIssuesCount  int         `json:"open_issues_count"`
+				License          *struct {
+					Key    string  `json:"key"`
+					Name   string  `json:"name"`
+					SpdxID string  `json:"spdx_id"`
+					URL    *string `json:"url"`
+					NodeID string  `json:"node_id"`
+				} `json:"license"`
+				AllowForking  bool     `json:"allow_forking"`
+				IsTemplate    bool     `json:"is_template"`
+				Topics        []string `json:"topics"`
+				Visibility    string   `json:"visibility"`
+				Forks         int      `json:"forks"`
+				OpenIssues    int      `json:"open_issues"`
+				Watchers      int      `json:"watchers"`
+				DefaultBranch string   `json:"default_branch"`
+			}
+			easyjson619ac83dDecode(in, &v1)
+			*out = append(*out, v1)
+			in.WantComma()
+		}
+		in.Delim(']')
+	}
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(out *jwriter.Writer, in Stars) {
+	if in == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+		out.RawString("null")
+	} else {
+		out.RawByte('[')
+		for v2, v3 := range in {
+			if v2 > 0 {
+				out.RawByte(',')
+			}
+			easyjson619ac83dEncode(out, v3)
+		}
+		out.RawByte(']')
+	}
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v Stars) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v Stars) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *Stars) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *Stars) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(l, v)
+}
+func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
+	ID       int    `json:"id"`
+	NodeID   string `json:"node_id"`
+	Name     string `json:"name"`
+	FullName string `json:"full_name"`
+	Private  bool   `json:"private"`
+	Owner    struct {
+		Login             string `json:"login"`
+		ID                int    `json:"id"`
+		AvatarURL         string `json:"avatar_url"`
+		URL               string `json:"url"`
+		HTMLURL           string `json:"html_url"`
+		FollowersURL      string `json:"followers_url"`
+		FollowingURL      string `json:"following_url"`
+		GistsURL          string `json:"gists_url"`
+		StarredURL        string `json:"starred_url"`
+		SubscriptionsURL  string `json:"subscriptions_url"`
+		OrganizationsURL  string `json:"organizations_url"`
+		ReposURL          string `json:"repos_url"`
+		EventsURL         string `json:"events_url"`
+		ReceivedEventsURL string `json:"received_events_url"`
+		Type              string `json:"type"`
+		SiteAdmin         bool   `json:"site_admin"`
+	} `json:"owner"`
+	HTMLURL          string      `json:"html_url"`
+	Description      *string     `json:"description"`
+	Fork             bool        `json:"fork"`
+	URL              string      `json:"url"`
+	ForksURL         string      `json:"forks_url"`
+	KeysURL          string      `json:"keys_url"`
+	CollaboratorsURL string      `json:"collaborators_url"`
+	TeamsURL         string      `json:"teams_url"`
+	HooksURL         string      `json:"hooks_url"`
+	IssueEventsURL   string      `json:"issue_events_url"`
+	EventsURL        string      `json:"events_url"`
+	AssigneesURL     string      `json:"assignees_url"`
+	BranchesURL      string      `json:"branches_url"`
+	TagsURL          string      `json:"tags_url"`
+	BlobsURL         string      `json:"blobs_url"`
+	GitTagsURL       string      `json:"git_tags_url"`
+	GitRefsURL       string      `json:"git_refs_url"`
+	TreesURL         string      `json:"trees_url"`
+	StatusesURL      string      `json:"statuses_url"`
+	LanguagesURL     string      `json:"languages_url"`
+	StargazersURL    string      `json:"stargazers_url"`
+	ContributorsURL  string      `json:"contributors_url"`
+	SubscribersURL   string      `json:"subscribers_url"`
+	SubscriptionURL  string      `json:"subscription_url"`
+	CommitsURL       string      `json:"commits_url"`
+	GitCommitsURL    string      `json:"git_commits_url"`
+	CommentsURL      string      `json:"comments_url"`
+	IssueCommentURL  string      `json:"issue_comment_url"`
+	ContentsURL      string      `json:"contents_url"`
+	CompareURL       string      `json:"compare_url"`
+	MergesURL        string      `json:"merges_url"`
+	ArchiveURL       string      `json:"archive_url"`
+	DownloadsURL     string      `json:"downloads_url"`
+	IssuesURL        string      `json:"issues_url"`
+	PullsURL         string      `json:"pulls_url"`
+	MilestonesURL    string      `json:"milestones_url"`
+	NotificationsURL string      `json:"notifications_url"`
+	LabelsURL        string      `json:"labels_url"`
+	ReleasesURL      string      `json:"releases_url"`
+	DeploymentsURL   string      `json:"deployments_url"`
+	CreatedAt        time.Time   `json:"created_at"`
+	UpdatedAt        time.Time   `json:"updated_at"`
+	PushedAt         time.Time   `json:"pushed_at"`
+	GitURL           string      `json:"git_url"`
+	SSHURL           string      `json:"ssh_url"`
+	CloneURL         string      `json:"clone_url"`
+	SvnURL           string      `json:"svn_url"`
+	Homepage         *string     `json:"homepage"`
+	Size             int         `json:"size"`
+	StargazersCount  int         `json:"stargazers_count"`
+	WatchersCount    int         `json:"watchers_count"`
+	Language         *string     `json:"language"`
+	HasIssues        bool        `json:"has_issues"`
+	HasProjects      bool        `json:"has_projects"`
+	HasDownloads     bool        `json:"has_downloads"`
+	HasWiki          bool        `json:"has_wiki"`
+	HasPages         bool        `json:"has_pages"`
+	ForksCount       int         `json:"forks_count"`
+	MirrorURL        interface{} `json:"mirror_url"`
+	Archived         bool        `json:"archived"`
+	Disabled         bool        `json:"disabled"`
+	OpenIssuesCount  int         `json:"open_issues_count"`
+	License          *struct {
+		Key    string  `json:"key"`
+		Name   string  `json:"name"`
+		SpdxID string  `json:"spdx_id"`
+		URL    *string `json:"url"`
+		NodeID string  `json:"node_id"`
+	} `json:"license"`
+	AllowForking  bool     `json:"allow_forking"`
+	IsTemplate    bool     `json:"is_template"`
+	Topics        []string `json:"topics"`
+	Visibility    string   `json:"visibility"`
+	Forks         int      `json:"forks"`
+	OpenIssues    int      `json:"open_issues"`
+	Watchers      int      `json:"watchers"`
+	DefaultBranch string   `json:"default_branch"`
+}) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -356,9 +771,9 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 		case "private":
 			out.Private = bool(in.Bool())
 		case "owner":
-			easyjson619ac83dDecode(in, &out.Owner)
+			easyjson619ac83dDecode1(in, &out.Owner)
 		case "html_url":
-			out.HtmlUrl = string(in.String())
+			out.HTMLURL = string(in.String())
 		case "description":
 			if in.IsNull() {
 				in.Skip()
@@ -372,79 +787,79 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 		case "fork":
 			out.Fork = bool(in.Bool())
 		case "url":
-			out.Url = string(in.String())
+			out.URL = string(in.String())
 		case "forks_url":
-			out.ForksUrl = string(in.String())
+			out.ForksURL = string(in.String())
 		case "keys_url":
-			out.KeysUrl = string(in.String())
+			out.KeysURL = string(in.String())
 		case "collaborators_url":
-			out.CollaboratorsUrl = string(in.String())
+			out.CollaboratorsURL = string(in.String())
 		case "teams_url":
-			out.TeamsUrl = string(in.String())
+			out.TeamsURL = string(in.String())
 		case "hooks_url":
-			out.HooksUrl = string(in.String())
+			out.HooksURL = string(in.String())
 		case "issue_events_url":
-			out.IssueEventsUrl = string(in.String())
+			out.IssueEventsURL = string(in.String())
 		case "events_url":
-			out.EventsUrl = string(in.String())
+			out.EventsURL = string(in.String())
 		case "assignees_url":
-			out.AssigneesUrl = string(in.String())
+			out.AssigneesURL = string(in.String())
 		case "branches_url":
-			out.BranchesUrl = string(in.String())
+			out.BranchesURL = string(in.String())
 		case "tags_url":
-			out.TagsUrl = string(in.String())
+			out.TagsURL = string(in.String())
 		case "blobs_url":
-			out.BlobsUrl = string(in.String())
+			out.BlobsURL = string(in.String())
 		case "git_tags_url":
-			out.GitTagsUrl = string(in.String())
+			out.GitTagsURL = string(in.String())
 		case "git_refs_url":
-			out.GitRefsUrl = string(in.String())
+			out.GitRefsURL = string(in.String())
 		case "trees_url":
-			out.TreesUrl = string(in.String())
+			out.TreesURL = string(in.String())
 		case "statuses_url":
-			out.StatusesUrl = string(in.String())
+			out.StatusesURL = string(in.String())
 		case "languages_url":
-			out.LanguagesUrl = string(in.String())
+			out.LanguagesURL = string(in.String())
 		case "stargazers_url":
-			out.StargazersUrl = string(in.String())
+			out.StargazersURL = string(in.String())
 		case "contributors_url":
-			out.ContributorsUrl = string(in.String())
+			out.ContributorsURL = string(in.String())
 		case "subscribers_url":
-			out.SubscribersUrl = string(in.String())
+			out.SubscribersURL = string(in.String())
 		case "subscription_url":
-			out.SubscriptionUrl = string(in.String())
+			out.SubscriptionURL = string(in.String())
 		case "commits_url":
-			out.CommitsUrl = string(in.String())
+			out.CommitsURL = string(in.String())
 		case "git_commits_url":
-			out.GitCommitsUrl = string(in.String())
+			out.GitCommitsURL = string(in.String())
 		case "comments_url":
-			out.CommentsUrl = string(in.String())
+			out.CommentsURL = string(in.String())
 		case "issue_comment_url":
-			out.IssueCommentUrl = string(in.String())
+			out.IssueCommentURL = string(in.String())
 		case "contents_url":
-			out.ContentsUrl = string(in.String())
+			out.ContentsURL = string(in.String())
 		case "compare_url":
-			out.CompareUrl = string(in.String())
+			out.CompareURL = string(in.String())
 		case "merges_url":
-			out.MergesUrl = string(in.String())
+			out.MergesURL = string(in.String())
 		case "archive_url":
-			out.ArchiveUrl = string(in.String())
+			out.ArchiveURL = string(in.String())
 		case "downloads_url":
-			out.DownloadsUrl = string(in.String())
+			out.DownloadsURL = string(in.String())
 		case "issues_url":
-			out.IssuesUrl = string(in.String())
+			out.IssuesURL = string(in.String())
 		case "pulls_url":
-			out.PullsUrl = string(in.String())
+			out.PullsURL = string(in.String())
 		case "milestones_url":
-			out.MilestonesUrl = string(in.String())
+			out.MilestonesURL = string(in.String())
 		case "notifications_url":
-			out.NotificationsUrl = string(in.String())
+			out.NotificationsURL = string(in.String())
 		case "labels_url":
-			out.LabelsUrl = string(in.String())
+			out.LabelsURL = string(in.String())
 		case "releases_url":
-			out.ReleasesUrl = string(in.String())
+			out.ReleasesURL = string(in.String())
 		case "deployments_url":
-			out.DeploymentsUrl = string(in.String())
+			out.DeploymentsURL = string(in.String())
 		case "created_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.CreatedAt).UnmarshalJSON(data))
@@ -458,13 +873,13 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 				in.AddError((out.PushedAt).UnmarshalJSON(data))
 			}
 		case "git_url":
-			out.GitUrl = string(in.String())
+			out.GitURL = string(in.String())
 		case "ssh_url":
-			out.SshUrl = string(in.String())
+			out.SSHURL = string(in.String())
 		case "clone_url":
-			out.CloneUrl = string(in.String())
+			out.CloneURL = string(in.String())
 		case "svn_url":
-			out.SvnUrl = string(in.String())
+			out.SvnURL = string(in.String())
 		case "homepage":
 			if in.IsNull() {
 				in.Skip()
@@ -504,12 +919,12 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 		case "forks_count":
 			out.ForksCount = int(in.Int())
 		case "mirror_url":
-			if m, ok := out.MirrorUrl.(easyjson.Unmarshaler); ok {
+			if m, ok := out.MirrorURL.(easyjson.Unmarshaler); ok {
 				m.UnmarshalEasyJSON(in)
-			} else if m, ok := out.MirrorUrl.(json.Unmarshaler); ok {
+			} else if m, ok := out.MirrorURL.(json.Unmarshaler); ok {
 				_ = m.UnmarshalJSON(in.Raw())
 			} else {
-				out.MirrorUrl = in.Interface()
+				out.MirrorURL = in.Interface()
 			}
 		case "archived":
 			out.Archived = bool(in.Bool())
@@ -526,12 +941,12 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 					out.License = new(struct {
 						Key    string  `json:"key"`
 						Name   string  `json:"name"`
-						SpdxId string  `json:"spdx_id"`
-						Url    *string `json:"url"`
-						NodeId string  `json:"node_id"`
+						SpdxID string  `json:"spdx_id"`
+						URL    *string `json:"url"`
+						NodeID string  `json:"node_id"`
 					})
 				}
-				easyjson619ac83dDecode1(in, out.License)
+				easyjson619ac83dDecode2(in, out.License)
 			}
 		case "allow_forking":
 			out.AllowForking = bool(in.Bool())
@@ -553,9 +968,9 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 					out.Topics = (out.Topics)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v1 string
-					v1 = string(in.String())
-					out.Topics = append(out.Topics, v1)
+					var v4 string
+					v4 = string(in.String())
+					out.Topics = append(out.Topics, v4)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -580,460 +995,900 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 		in.Consumed()
 	}
 }
-func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(out *jwriter.Writer, in Star) {
+func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
+	ID       int    `json:"id"`
+	NodeID   string `json:"node_id"`
+	Name     string `json:"name"`
+	FullName string `json:"full_name"`
+	Private  bool   `json:"private"`
+	Owner    struct {
+		Login             string `json:"login"`
+		ID                int    `json:"id"`
+		AvatarURL         string `json:"avatar_url"`
+		URL               string `json:"url"`
+		HTMLURL           string `json:"html_url"`
+		FollowersURL      string `json:"followers_url"`
+		FollowingURL      string `json:"following_url"`
+		GistsURL          string `json:"gists_url"`
+		StarredURL        string `json:"starred_url"`
+		SubscriptionsURL  string `json:"subscriptions_url"`
+		OrganizationsURL  string `json:"organizations_url"`
+		ReposURL          string `json:"repos_url"`
+		EventsURL         string `json:"events_url"`
+		ReceivedEventsURL string `json:"received_events_url"`
+		Type              string `json:"type"`
+		SiteAdmin         bool   `json:"site_admin"`
+	} `json:"owner"`
+	HTMLURL          string      `json:"html_url"`
+	Description      *string     `json:"description"`
+	Fork             bool        `json:"fork"`
+	URL              string      `json:"url"`
+	ForksURL         string      `json:"forks_url"`
+	KeysURL          string      `json:"keys_url"`
+	CollaboratorsURL string      `json:"collaborators_url"`
+	TeamsURL         string      `json:"teams_url"`
+	HooksURL         string      `json:"hooks_url"`
+	IssueEventsURL   string      `json:"issue_events_url"`
+	EventsURL        string      `json:"events_url"`
+	AssigneesURL     string      `json:"assignees_url"`
+	BranchesURL      string      `json:"branches_url"`
+	TagsURL          string      `json:"tags_url"`
+	BlobsURL         string      `json:"blobs_url"`
+	GitTagsURL       string      `json:"git_tags_url"`
+	GitRefsURL       string      `json:"git_refs_url"`
+	TreesURL         string      `json:"trees_url"`
+	StatusesURL      string      `json:"statuses_url"`
+	LanguagesURL     string      `json:"languages_url"`
+	StargazersURL    string      `json:"stargazers_url"`
+	ContributorsURL  string      `json:"contributors_url"`
+	SubscribersURL   string      `json:"subscribers_url"`
+	SubscriptionURL  string      `json:"subscription_url"`
+	CommitsURL       string      `json:"commits_url"`
+	GitCommitsURL    string      `json:"git_commits_url"`
+	CommentsURL      string      `json:"comments_url"`
+	IssueCommentURL  string      `json:"issue_comment_url"`
+	ContentsURL      string      `json:"contents_url"`
+	CompareURL       string      `json:"compare_url"`
+	MergesURL        string      `json:"merges_url"`
+	ArchiveURL       string      `json:"archive_url"`
+	DownloadsURL     string      `json:"downloads_url"`
+	IssuesURL        string      `json:"issues_url"`
+	PullsURL         string      `json:"pulls_url"`
+	MilestonesURL    string      `json:"milestones_url"`
+	NotificationsURL string      `json:"notifications_url"`
+	LabelsURL        string      `json:"labels_url"`
+	ReleasesURL      string      `json:"releases_url"`
+	DeploymentsURL   string      `json:"deployments_url"`
+	CreatedAt        time.Time   `json:"created_at"`
+	UpdatedAt        time.Time   `json:"updated_at"`
+	PushedAt         time.Time   `json:"pushed_at"`
+	GitURL           string      `json:"git_url"`
+	SSHURL           string      `json:"ssh_url"`
+	CloneURL         string      `json:"clone_url"`
+	SvnURL           string      `json:"svn_url"`
+	Homepage         *string     `json:"homepage"`
+	Size             int         `json:"size"`
+	StargazersCount  int         `json:"stargazers_count"`
+	WatchersCount    int         `json:"watchers_count"`
+	Language         *string     `json:"language"`
+	HasIssues        bool        `json:"has_issues"`
+	HasProjects      bool        `json:"has_projects"`
+	HasDownloads     bool        `json:"has_downloads"`
+	HasWiki          bool        `json:"has_wiki"`
+	HasPages         bool        `json:"has_pages"`
+	ForksCount       int         `json:"forks_count"`
+	MirrorURL        interface{} `json:"mirror_url"`
+	Archived         bool        `json:"archived"`
+	Disabled         bool        `json:"disabled"`
+	OpenIssuesCount  int         `json:"open_issues_count"`
+	License          *struct {
+		Key    string  `json:"key"`
+		Name   string  `json:"name"`
+		SpdxID string  `json:"spdx_id"`
+		URL    *string `json:"url"`
+		NodeID string  `json:"node_id"`
+	} `json:"license"`
+	AllowForking  bool     `json:"allow_forking"`
+	IsTemplate    bool     `json:"is_template"`
+	Topics        []string `json:"topics"`
+	Visibility    string   `json:"visibility"`
+	Forks         int      `json:"forks"`
+	OpenIssues    int      `json:"open_issues"`
+	Watchers      int      `json:"watchers"`
+	DefaultBranch string   `json:"default_branch"`
+}) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	{
+	if in.ID != 0 {
 		const prefix string = ",\"id\":"
+		first = false
 		out.RawString(prefix[1:])
 		out.Int(int(in.ID))
 	}
-	{
+	if in.NodeID != "" {
 		const prefix string = ",\"node_id\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.NodeID))
 	}
-	{
+	if in.Name != "" {
 		const prefix string = ",\"name\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Name))
 	}
-	{
+	if in.FullName != "" {
 		const prefix string = ",\"full_name\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.FullName))
 	}
-	{
+	if in.Private {
 		const prefix string = ",\"private\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.Private))
 	}
-	{
+	if true {
 		const prefix string = ",\"owner\":"
-		out.RawString(prefix)
-		easyjson619ac83dEncode(out, in.Owner)
-	}
-	{
-		const prefix string = ",\"html_url\":"
-		out.RawString(prefix)
-		out.String(string(in.HtmlUrl))
-	}
-	{
-		const prefix string = ",\"description\":"
-		out.RawString(prefix)
-		if in.Description == nil {
-			out.RawString("null")
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
-			out.String(string(*in.Description))
+			out.RawString(prefix)
 		}
+		easyjson619ac83dEncode1(out, in.Owner)
 	}
-	{
+	if in.HTMLURL != "" {
+		const prefix string = ",\"html_url\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.HTMLURL))
+	}
+	if in.Description != nil {
+		const prefix string = ",\"description\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(*in.Description))
+	}
+	if in.Fork {
 		const prefix string = ",\"fork\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.Fork))
 	}
-	{
+	if in.URL != "" {
 		const prefix string = ",\"url\":"
-		out.RawString(prefix)
-		out.String(string(in.Url))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.URL))
 	}
-	{
+	if in.ForksURL != "" {
 		const prefix string = ",\"forks_url\":"
-		out.RawString(prefix)
-		out.String(string(in.ForksUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ForksURL))
 	}
-	{
+	if in.KeysURL != "" {
 		const prefix string = ",\"keys_url\":"
-		out.RawString(prefix)
-		out.String(string(in.KeysUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.KeysURL))
 	}
-	{
+	if in.CollaboratorsURL != "" {
 		const prefix string = ",\"collaborators_url\":"
-		out.RawString(prefix)
-		out.String(string(in.CollaboratorsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.CollaboratorsURL))
 	}
-	{
+	if in.TeamsURL != "" {
 		const prefix string = ",\"teams_url\":"
-		out.RawString(prefix)
-		out.String(string(in.TeamsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.TeamsURL))
 	}
-	{
+	if in.HooksURL != "" {
 		const prefix string = ",\"hooks_url\":"
-		out.RawString(prefix)
-		out.String(string(in.HooksUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.HooksURL))
 	}
-	{
+	if in.IssueEventsURL != "" {
 		const prefix string = ",\"issue_events_url\":"
-		out.RawString(prefix)
-		out.String(string(in.IssueEventsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.IssueEventsURL))
 	}
-	{
+	if in.EventsURL != "" {
 		const prefix string = ",\"events_url\":"
-		out.RawString(prefix)
-		out.String(string(in.EventsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.EventsURL))
 	}
-	{
+	if in.AssigneesURL != "" {
 		const prefix string = ",\"assignees_url\":"
-		out.RawString(prefix)
-		out.String(string(in.AssigneesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.AssigneesURL))
 	}
-	{
+	if in.BranchesURL != "" {
 		const prefix string = ",\"branches_url\":"
-		out.RawString(prefix)
-		out.String(string(in.BranchesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.BranchesURL))
 	}
-	{
+	if in.TagsURL != "" {
 		const prefix string = ",\"tags_url\":"
-		out.RawString(prefix)
-		out.String(string(in.TagsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.TagsURL))
 	}
-	{
+	if in.BlobsURL != "" {
 		const prefix string = ",\"blobs_url\":"
-		out.RawString(prefix)
-		out.String(string(in.BlobsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.BlobsURL))
 	}
-	{
+	if in.GitTagsURL != "" {
 		const prefix string = ",\"git_tags_url\":"
-		out.RawString(prefix)
-		out.String(string(in.GitTagsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.GitTagsURL))
 	}
-	{
+	if in.GitRefsURL != "" {
 		const prefix string = ",\"git_refs_url\":"
-		out.RawString(prefix)
-		out.String(string(in.GitRefsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.GitRefsURL))
 	}
-	{
+	if in.TreesURL != "" {
 		const prefix string = ",\"trees_url\":"
-		out.RawString(prefix)
-		out.String(string(in.TreesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.TreesURL))
 	}
-	{
+	if in.StatusesURL != "" {
 		const prefix string = ",\"statuses_url\":"
-		out.RawString(prefix)
-		out.String(string(in.StatusesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.StatusesURL))
 	}
-	{
+	if in.LanguagesURL != "" {
 		const prefix string = ",\"languages_url\":"
-		out.RawString(prefix)
-		out.String(string(in.LanguagesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LanguagesURL))
 	}
-	{
+	if in.StargazersURL != "" {
 		const prefix string = ",\"stargazers_url\":"
-		out.RawString(prefix)
-		out.String(string(in.StargazersUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.StargazersURL))
 	}
-	{
+	if in.ContributorsURL != "" {
 		const prefix string = ",\"contributors_url\":"
-		out.RawString(prefix)
-		out.String(string(in.ContributorsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ContributorsURL))
 	}
-	{
+	if in.SubscribersURL != "" {
 		const prefix string = ",\"subscribers_url\":"
-		out.RawString(prefix)
-		out.String(string(in.SubscribersUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SubscribersURL))
 	}
-	{
+	if in.SubscriptionURL != "" {
 		const prefix string = ",\"subscription_url\":"
-		out.RawString(prefix)
-		out.String(string(in.SubscriptionUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SubscriptionURL))
 	}
-	{
+	if in.CommitsURL != "" {
 		const prefix string = ",\"commits_url\":"
-		out.RawString(prefix)
-		out.String(string(in.CommitsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.CommitsURL))
 	}
-	{
+	if in.GitCommitsURL != "" {
 		const prefix string = ",\"git_commits_url\":"
-		out.RawString(prefix)
-		out.String(string(in.GitCommitsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.GitCommitsURL))
 	}
-	{
+	if in.CommentsURL != "" {
 		const prefix string = ",\"comments_url\":"
-		out.RawString(prefix)
-		out.String(string(in.CommentsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.CommentsURL))
 	}
-	{
+	if in.IssueCommentURL != "" {
 		const prefix string = ",\"issue_comment_url\":"
-		out.RawString(prefix)
-		out.String(string(in.IssueCommentUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.IssueCommentURL))
 	}
-	{
+	if in.ContentsURL != "" {
 		const prefix string = ",\"contents_url\":"
-		out.RawString(prefix)
-		out.String(string(in.ContentsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ContentsURL))
 	}
-	{
+	if in.CompareURL != "" {
 		const prefix string = ",\"compare_url\":"
-		out.RawString(prefix)
-		out.String(string(in.CompareUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.CompareURL))
 	}
-	{
+	if in.MergesURL != "" {
 		const prefix string = ",\"merges_url\":"
-		out.RawString(prefix)
-		out.String(string(in.MergesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.MergesURL))
 	}
-	{
+	if in.ArchiveURL != "" {
 		const prefix string = ",\"archive_url\":"
-		out.RawString(prefix)
-		out.String(string(in.ArchiveUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ArchiveURL))
 	}
-	{
+	if in.DownloadsURL != "" {
 		const prefix string = ",\"downloads_url\":"
-		out.RawString(prefix)
-		out.String(string(in.DownloadsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.DownloadsURL))
 	}
-	{
+	if in.IssuesURL != "" {
 		const prefix string = ",\"issues_url\":"
-		out.RawString(prefix)
-		out.String(string(in.IssuesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.IssuesURL))
 	}
-	{
+	if in.PullsURL != "" {
 		const prefix string = ",\"pulls_url\":"
-		out.RawString(prefix)
-		out.String(string(in.PullsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.PullsURL))
 	}
-	{
+	if in.MilestonesURL != "" {
 		const prefix string = ",\"milestones_url\":"
-		out.RawString(prefix)
-		out.String(string(in.MilestonesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.MilestonesURL))
 	}
-	{
+	if in.NotificationsURL != "" {
 		const prefix string = ",\"notifications_url\":"
-		out.RawString(prefix)
-		out.String(string(in.NotificationsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.NotificationsURL))
 	}
-	{
+	if in.LabelsURL != "" {
 		const prefix string = ",\"labels_url\":"
-		out.RawString(prefix)
-		out.String(string(in.LabelsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.LabelsURL))
 	}
-	{
+	if in.ReleasesURL != "" {
 		const prefix string = ",\"releases_url\":"
-		out.RawString(prefix)
-		out.String(string(in.ReleasesUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ReleasesURL))
 	}
-	{
+	if in.DeploymentsURL != "" {
 		const prefix string = ",\"deployments_url\":"
-		out.RawString(prefix)
-		out.String(string(in.DeploymentsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.DeploymentsURL))
 	}
-	{
+	if true {
 		const prefix string = ",\"created_at\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Raw((in.CreatedAt).MarshalJSON())
 	}
-	{
+	if true {
 		const prefix string = ",\"updated_at\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Raw((in.UpdatedAt).MarshalJSON())
 	}
-	{
+	if true {
 		const prefix string = ",\"pushed_at\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Raw((in.PushedAt).MarshalJSON())
 	}
-	{
+	if in.GitURL != "" {
 		const prefix string = ",\"git_url\":"
-		out.RawString(prefix)
-		out.String(string(in.GitUrl))
-	}
-	{
-		const prefix string = ",\"ssh_url\":"
-		out.RawString(prefix)
-		out.String(string(in.SshUrl))
-	}
-	{
-		const prefix string = ",\"clone_url\":"
-		out.RawString(prefix)
-		out.String(string(in.CloneUrl))
-	}
-	{
-		const prefix string = ",\"svn_url\":"
-		out.RawString(prefix)
-		out.String(string(in.SvnUrl))
-	}
-	{
-		const prefix string = ",\"homepage\":"
-		out.RawString(prefix)
-		if in.Homepage == nil {
-			out.RawString("null")
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
-			out.String(string(*in.Homepage))
+			out.RawString(prefix)
 		}
+		out.String(string(in.GitURL))
 	}
-	{
+	if in.SSHURL != "" {
+		const prefix string = ",\"ssh_url\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SSHURL))
+	}
+	if in.CloneURL != "" {
+		const prefix string = ",\"clone_url\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.CloneURL))
+	}
+	if in.SvnURL != "" {
+		const prefix string = ",\"svn_url\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SvnURL))
+	}
+	if in.Homepage != nil {
+		const prefix string = ",\"homepage\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(*in.Homepage))
+	}
+	if in.Size != 0 {
 		const prefix string = ",\"size\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.Size))
 	}
-	{
+	if in.StargazersCount != 0 {
 		const prefix string = ",\"stargazers_count\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.StargazersCount))
 	}
-	{
+	if in.WatchersCount != 0 {
 		const prefix string = ",\"watchers_count\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.WatchersCount))
 	}
-	{
+	if in.Language != nil {
 		const prefix string = ",\"language\":"
-		out.RawString(prefix)
-		if in.Language == nil {
-			out.RawString("null")
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
-			out.String(string(*in.Language))
+			out.RawString(prefix)
 		}
+		out.String(string(*in.Language))
 	}
-	{
+	if in.HasIssues {
 		const prefix string = ",\"has_issues\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.HasIssues))
 	}
-	{
+	if in.HasProjects {
 		const prefix string = ",\"has_projects\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.HasProjects))
 	}
-	{
+	if in.HasDownloads {
 		const prefix string = ",\"has_downloads\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.HasDownloads))
 	}
-	{
+	if in.HasWiki {
 		const prefix string = ",\"has_wiki\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.HasWiki))
 	}
-	{
+	if in.HasPages {
 		const prefix string = ",\"has_pages\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.HasPages))
 	}
-	{
+	if in.ForksCount != 0 {
 		const prefix string = ",\"forks_count\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.ForksCount))
 	}
-	{
+	if in.MirrorURL != nil {
 		const prefix string = ",\"mirror_url\":"
-		out.RawString(prefix)
-		if m, ok := in.MirrorUrl.(easyjson.Marshaler); ok {
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		if m, ok := in.MirrorURL.(easyjson.Marshaler); ok {
 			m.MarshalEasyJSON(out)
-		} else if m, ok := in.MirrorUrl.(json.Marshaler); ok {
+		} else if m, ok := in.MirrorURL.(json.Marshaler); ok {
 			out.Raw(m.MarshalJSON())
 		} else {
-			out.Raw(json.Marshal(in.MirrorUrl))
+			out.Raw(json.Marshal(in.MirrorURL))
 		}
 	}
-	{
+	if in.Archived {
 		const prefix string = ",\"archived\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.Archived))
 	}
-	{
+	if in.Disabled {
 		const prefix string = ",\"disabled\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.Disabled))
 	}
-	{
+	if in.OpenIssuesCount != 0 {
 		const prefix string = ",\"open_issues_count\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.OpenIssuesCount))
 	}
-	{
+	if in.License != nil {
 		const prefix string = ",\"license\":"
-		out.RawString(prefix)
-		if in.License == nil {
-			out.RawString("null")
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
-			easyjson619ac83dEncode1(out, *in.License)
+			out.RawString(prefix)
 		}
+		easyjson619ac83dEncode2(out, *in.License)
 	}
-	{
+	if in.AllowForking {
 		const prefix string = ",\"allow_forking\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.AllowForking))
 	}
-	{
+	if in.IsTemplate {
 		const prefix string = ",\"is_template\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.IsTemplate))
 	}
-	{
+	if len(in.Topics) != 0 {
 		const prefix string = ",\"topics\":"
-		out.RawString(prefix)
-		if in.Topics == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
+			out.RawString(prefix)
+		}
+		{
 			out.RawByte('[')
-			for v2, v3 := range in.Topics {
-				if v2 > 0 {
+			for v5, v6 := range in.Topics {
+				if v5 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v3))
+				out.String(string(v6))
 			}
 			out.RawByte(']')
 		}
 	}
-	{
+	if in.Visibility != "" {
 		const prefix string = ",\"visibility\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Visibility))
 	}
-	{
+	if in.Forks != 0 {
 		const prefix string = ",\"forks\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.Forks))
 	}
-	{
+	if in.OpenIssues != 0 {
 		const prefix string = ",\"open_issues\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.OpenIssues))
 	}
-	{
+	if in.Watchers != 0 {
 		const prefix string = ",\"watchers\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.Watchers))
 	}
-	{
+	if in.DefaultBranch != "" {
 		const prefix string = ",\"default_branch\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.DefaultBranch))
 	}
 	out.RawByte('}')
 }
-
-// MarshalJSON supports json.Marshaler interface
-func (v Star) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v Star) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *Star) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *Star) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(l, v)
-}
-func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
+func easyjson619ac83dDecode2(in *jlexer.Lexer, out *struct {
 	Key    string  `json:"key"`
 	Name   string  `json:"name"`
-	SpdxId string  `json:"spdx_id"`
-	Url    *string `json:"url"`
-	NodeId string  `json:"node_id"`
+	SpdxID string  `json:"spdx_id"`
+	URL    *string `json:"url"`
+	NodeID string  `json:"node_id"`
 }) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
@@ -1058,19 +1913,19 @@ func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 		case "name":
 			out.Name = string(in.String())
 		case "spdx_id":
-			out.SpdxId = string(in.String())
+			out.SpdxID = string(in.String())
 		case "url":
 			if in.IsNull() {
 				in.Skip()
-				out.Url = nil
+				out.URL = nil
 			} else {
-				if out.Url == nil {
-					out.Url = new(string)
+				if out.URL == nil {
+					out.URL = new(string)
 				}
-				*out.Url = string(in.String())
+				*out.URL = string(in.String())
 			}
 		case "node_id":
-			out.NodeId = string(in.String())
+			out.NodeID = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -1081,62 +1936,79 @@ func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 		in.Consumed()
 	}
 }
-func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
+func easyjson619ac83dEncode2(out *jwriter.Writer, in struct {
 	Key    string  `json:"key"`
 	Name   string  `json:"name"`
-	SpdxId string  `json:"spdx_id"`
-	Url    *string `json:"url"`
-	NodeId string  `json:"node_id"`
+	SpdxID string  `json:"spdx_id"`
+	URL    *string `json:"url"`
+	NodeID string  `json:"node_id"`
 }) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	{
+	if in.Key != "" {
 		const prefix string = ",\"key\":"
+		first = false
 		out.RawString(prefix[1:])
 		out.String(string(in.Key))
 	}
-	{
+	if in.Name != "" {
 		const prefix string = ",\"name\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Name))
 	}
-	{
+	if in.SpdxID != "" {
 		const prefix string = ",\"spdx_id\":"
-		out.RawString(prefix)
-		out.String(string(in.SpdxId))
-	}
-	{
-		const prefix string = ",\"url\":"
-		out.RawString(prefix)
-		if in.Url == nil {
-			out.RawString("null")
+		if first {
+			first = false
+			out.RawString(prefix[1:])
 		} else {
-			out.String(string(*in.Url))
+			out.RawString(prefix)
 		}
+		out.String(string(in.SpdxID))
 	}
-	{
+	if in.URL != nil {
+		const prefix string = ",\"url\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(*in.URL))
+	}
+	if in.NodeID != "" {
 		const prefix string = ",\"node_id\":"
-		out.RawString(prefix)
-		out.String(string(in.NodeId))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.NodeID))
 	}
 	out.RawByte('}')
 }
-func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
+func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 	Login             string `json:"login"`
 	ID                int    `json:"id"`
 	AvatarURL         string `json:"avatar_url"`
 	URL               string `json:"url"`
 	HTMLURL           string `json:"html_url"`
-	FollowersUrl      string `json:"followers_url"`
-	FollowingUrl      string `json:"following_url"`
-	GistsUrl          string `json:"gists_url"`
-	StarredUrl        string `json:"starred_url"`
-	SubscriptionsUrl  string `json:"subscriptions_url"`
-	OrganizationsUrl  string `json:"organizations_url"`
-	ReposUrl          string `json:"repos_url"`
-	EventsUrl         string `json:"events_url"`
-	ReceivedEventsUrl string `json:"received_events_url"`
+	FollowersURL      string `json:"followers_url"`
+	FollowingURL      string `json:"following_url"`
+	GistsURL          string `json:"gists_url"`
+	StarredURL        string `json:"starred_url"`
+	SubscriptionsURL  string `json:"subscriptions_url"`
+	OrganizationsURL  string `json:"organizations_url"`
+	ReposURL          string `json:"repos_url"`
+	EventsURL         string `json:"events_url"`
+	ReceivedEventsURL string `json:"received_events_url"`
 	Type              string `json:"type"`
 	SiteAdmin         bool   `json:"site_admin"`
 }) {
@@ -1169,23 +2041,23 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 		case "html_url":
 			out.HTMLURL = string(in.String())
 		case "followers_url":
-			out.FollowersUrl = string(in.String())
+			out.FollowersURL = string(in.String())
 		case "following_url":
-			out.FollowingUrl = string(in.String())
+			out.FollowingURL = string(in.String())
 		case "gists_url":
-			out.GistsUrl = string(in.String())
+			out.GistsURL = string(in.String())
 		case "starred_url":
-			out.StarredUrl = string(in.String())
+			out.StarredURL = string(in.String())
 		case "subscriptions_url":
-			out.SubscriptionsUrl = string(in.String())
+			out.SubscriptionsURL = string(in.String())
 		case "organizations_url":
-			out.OrganizationsUrl = string(in.String())
+			out.OrganizationsURL = string(in.String())
 		case "repos_url":
-			out.ReposUrl = string(in.String())
+			out.ReposURL = string(in.String())
 		case "events_url":
-			out.EventsUrl = string(in.String())
+			out.EventsURL = string(in.String())
 		case "received_events_url":
-			out.ReceivedEventsUrl = string(in.String())
+			out.ReceivedEventsURL = string(in.String())
 		case "type":
 			out.Type = string(in.String())
 		case "site_admin":
@@ -1200,211 +2072,182 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 		in.Consumed()
 	}
 }
-func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
+func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
 	Login             string `json:"login"`
 	ID                int    `json:"id"`
 	AvatarURL         string `json:"avatar_url"`
 	URL               string `json:"url"`
 	HTMLURL           string `json:"html_url"`
-	FollowersUrl      string `json:"followers_url"`
-	FollowingUrl      string `json:"following_url"`
-	GistsUrl          string `json:"gists_url"`
-	StarredUrl        string `json:"starred_url"`
-	SubscriptionsUrl  string `json:"subscriptions_url"`
-	OrganizationsUrl  string `json:"organizations_url"`
-	ReposUrl          string `json:"repos_url"`
-	EventsUrl         string `json:"events_url"`
-	ReceivedEventsUrl string `json:"received_events_url"`
+	FollowersURL      string `json:"followers_url"`
+	FollowingURL      string `json:"following_url"`
+	GistsURL          string `json:"gists_url"`
+	StarredURL        string `json:"starred_url"`
+	SubscriptionsURL  string `json:"subscriptions_url"`
+	OrganizationsURL  string `json:"organizations_url"`
+	ReposURL          string `json:"repos_url"`
+	EventsURL         string `json:"events_url"`
+	ReceivedEventsURL string `json:"received_events_url"`
 	Type              string `json:"type"`
 	SiteAdmin         bool   `json:"site_admin"`
 }) {
 	out.RawByte('{')
 	first := true
 	_ = first
-	{
+	if in.Login != "" {
 		const prefix string = ",\"login\":"
+		first = false
 		out.RawString(prefix[1:])
 		out.String(string(in.Login))
 	}
-	{
+	if in.ID != 0 {
 		const prefix string = ",\"id\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Int(int(in.ID))
 	}
-	{
+	if in.AvatarURL != "" {
 		const prefix string = ",\"avatar_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.AvatarURL))
 	}
-	{
+	if in.URL != "" {
 		const prefix string = ",\"url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.URL))
 	}
-	{
+	if in.HTMLURL != "" {
 		const prefix string = ",\"html_url\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.HTMLURL))
 	}
-	{
+	if in.FollowersURL != "" {
 		const prefix string = ",\"followers_url\":"
-		out.RawString(prefix)
-		out.String(string(in.FollowersUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.FollowersURL))
 	}
-	{
+	if in.FollowingURL != "" {
 		const prefix string = ",\"following_url\":"
-		out.RawString(prefix)
-		out.String(string(in.FollowingUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.FollowingURL))
 	}
-	{
+	if in.GistsURL != "" {
 		const prefix string = ",\"gists_url\":"
-		out.RawString(prefix)
-		out.String(string(in.GistsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.GistsURL))
 	}
-	{
+	if in.StarredURL != "" {
 		const prefix string = ",\"starred_url\":"
-		out.RawString(prefix)
-		out.String(string(in.StarredUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.StarredURL))
 	}
-	{
+	if in.SubscriptionsURL != "" {
 		const prefix string = ",\"subscriptions_url\":"
-		out.RawString(prefix)
-		out.String(string(in.SubscriptionsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.SubscriptionsURL))
 	}
-	{
+	if in.OrganizationsURL != "" {
 		const prefix string = ",\"organizations_url\":"
-		out.RawString(prefix)
-		out.String(string(in.OrganizationsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.OrganizationsURL))
 	}
-	{
+	if in.ReposURL != "" {
 		const prefix string = ",\"repos_url\":"
-		out.RawString(prefix)
-		out.String(string(in.ReposUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ReposURL))
 	}
-	{
+	if in.EventsURL != "" {
 		const prefix string = ",\"events_url\":"
-		out.RawString(prefix)
-		out.String(string(in.EventsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.EventsURL))
 	}
-	{
+	if in.ReceivedEventsURL != "" {
 		const prefix string = ",\"received_events_url\":"
-		out.RawString(prefix)
-		out.String(string(in.ReceivedEventsUrl))
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.ReceivedEventsURL))
 	}
-	{
+	if in.Type != "" {
 		const prefix string = ",\"type\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.String(string(in.Type))
 	}
-	{
+	if in.SiteAdmin {
 		const prefix string = ",\"site_admin\":"
-		out.RawString(prefix)
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
 		out.Bool(bool(in.SiteAdmin))
 	}
 	out.RawByte('}')
-}
-func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(in *jlexer.Lexer, out *Result) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "User":
-			(out.User).UnmarshalEasyJSON(in)
-		case "Stars":
-			if in.IsNull() {
-				in.Skip()
-				out.Stars = nil
-			} else {
-				in.Delim('[')
-				if out.Stars == nil {
-					if !in.IsDelim(']') {
-						out.Stars = make([]Star, 0, 0)
-					} else {
-						out.Stars = []Star{}
-					}
-				} else {
-					out.Stars = (out.Stars)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v4 Star
-					(v4).UnmarshalEasyJSON(in)
-					out.Stars = append(out.Stars, v4)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(out *jwriter.Writer, in Result) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	{
-		const prefix string = ",\"User\":"
-		out.RawString(prefix[1:])
-		(in.User).MarshalEasyJSON(out)
-	}
-	{
-		const prefix string = ",\"Stars\":"
-		out.RawString(prefix)
-		if in.Stars == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
-		} else {
-			out.RawByte('[')
-			for v5, v6 := range in.Stars {
-				if v5 > 0 {
-					out.RawByte(',')
-				}
-				(v6).MarshalEasyJSON(out)
-			}
-			out.RawByte(']')
-		}
-	}
-	out.RawByte('}')
-}
-
-// MarshalJSON supports json.Marshaler interface
-func (v Result) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v Result) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *Result) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *Result) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(l, v)
 }
