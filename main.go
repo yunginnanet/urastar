@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"io"
 	"net/http"
 	"os"
@@ -16,12 +17,10 @@ import (
 var log zerolog.Logger
 
 func init() {
-	log = zerolog.New(zerolog.NewConsoleWriter(func() *zerolog.ConsoleWriter {
-		return &zerolog.ConsoleWriter{
-			Out:        os.Stdout,
-			NoColor:    false,
-			TimeFormat: time.Stamp,
-		}
+	log = zerolog.New(zerolog.NewConsoleWriter(func(w *zerolog.ConsoleWriter) {
+		w.Out = os.Stdout
+		w.NoColor = false
+		w.TimeFormat = time.Stamp
 	}))
 	if len(os.Args) < 2 {
 		println("need target username")
@@ -104,7 +103,7 @@ func getAllStars(slog *zerolog.Logger, r *http.Response) (userStars []github.Sta
 			break
 		}
 	}
-
+	return
 }
 
 func main() {
@@ -121,6 +120,10 @@ func main() {
 		log.Fatal().Msg("no stars found!")
 	}
 	for _, s := range allStars {
-
+		ib, err := json.MarshalIndent(s, "", "\t")
+		if err != nil {
+			slog.Fatal().Err(err).Msg("failed to pretty print")
+		}
+		println(string(ib))
 	}
 }

@@ -326,112 +326,7 @@ func (v *User) UnmarshalJSON(data []byte) error {
 func (v *User) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub(l, v)
 }
-func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out *Result) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeFieldName(false)
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "User":
-			(out.User).UnmarshalEasyJSON(in)
-		case "Result":
-			if in.IsNull() {
-				in.Skip()
-				out.Stars = nil
-			} else {
-				in.Delim('[')
-				if out.Stars == nil {
-					if !in.IsDelim(']') {
-						out.Stars = make([]Star, 0, 0)
-					} else {
-						out.Stars = []Star{}
-					}
-				} else {
-					out.Stars = (out.Stars)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v1 Star
-					(v1).UnmarshalEasyJSON(in)
-					out.Stars = append(out.Stars, v1)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(out *jwriter.Writer, in Result) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	{
-		const prefix string = ",\"User\":"
-		out.RawString(prefix[1:])
-		(in.User).MarshalEasyJSON(out)
-	}
-	{
-		const prefix string = ",\"Result\":"
-		out.RawString(prefix)
-		if in.Stars == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-			out.RawString("null")
-		} else {
-			out.RawByte('[')
-			for v2, v3 := range in.Stars {
-				if v2 > 0 {
-					out.RawByte(',')
-				}
-				(v3).MarshalEasyJSON(out)
-			}
-			out.RawByte(']')
-		}
-	}
-	out.RawByte('}')
-}
-
-// MarshalJSON supports json.Marshaler interface
-func (v Result) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v Result) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *Result) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *Result) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(l, v)
-}
-func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(in *jlexer.Lexer, out *Star) {
+func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out *Star) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -658,9 +553,9 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(in *jlexer.Lexer, out
 					out.Topics = (out.Topics)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v4 string
-					v4 = string(in.String())
-					out.Topics = append(out.Topics, v4)
+					var v1 string
+					v1 = string(in.String())
+					out.Topics = append(out.Topics, v1)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -685,7 +580,7 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(in *jlexer.Lexer, out
 		in.Consumed()
 	}
 }
-func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(out *jwriter.Writer, in Star) {
+func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(out *jwriter.Writer, in Star) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1073,11 +968,11 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(out *jwriter.Writer, 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v5, v6 := range in.Topics {
-				if v5 > 0 {
+			for v2, v3 := range in.Topics {
+				if v2 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v6))
+				out.String(string(v3))
 			}
 			out.RawByte(']')
 		}
@@ -1113,25 +1008,25 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(out *jwriter.Writer, 
 // MarshalJSON supports json.Marshaler interface
 func (v Star) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(&w, v)
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Star) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(w, v)
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Star) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(&r, v)
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Star) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(l, v)
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(l, v)
 }
 func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 	Key    string  `json:"key"`
@@ -1229,10 +1124,10 @@ func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
 }
 func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 	Login             string `json:"login"`
-	Id                int    `json:"id"`
-	AvatarUrl         string `json:"avatar_url"`
-	Url               string `json:"url"`
-	HtmlUrl           string `json:"html_url"`
+	ID                int    `json:"id"`
+	AvatarURL         string `json:"avatar_url"`
+	URL               string `json:"url"`
+	HTMLURL           string `json:"html_url"`
 	FollowersUrl      string `json:"followers_url"`
 	FollowingUrl      string `json:"following_url"`
 	GistsUrl          string `json:"gists_url"`
@@ -1266,13 +1161,13 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 		case "login":
 			out.Login = string(in.String())
 		case "id":
-			out.Id = int(in.Int())
+			out.ID = int(in.Int())
 		case "avatar_url":
-			out.AvatarUrl = string(in.String())
+			out.AvatarURL = string(in.String())
 		case "url":
-			out.Url = string(in.String())
+			out.URL = string(in.String())
 		case "html_url":
-			out.HtmlUrl = string(in.String())
+			out.HTMLURL = string(in.String())
 		case "followers_url":
 			out.FollowersUrl = string(in.String())
 		case "following_url":
@@ -1307,10 +1202,10 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 }
 func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 	Login             string `json:"login"`
-	Id                int    `json:"id"`
-	AvatarUrl         string `json:"avatar_url"`
-	Url               string `json:"url"`
-	HtmlUrl           string `json:"html_url"`
+	ID                int    `json:"id"`
+	AvatarURL         string `json:"avatar_url"`
+	URL               string `json:"url"`
+	HTMLURL           string `json:"html_url"`
 	FollowersUrl      string `json:"followers_url"`
 	FollowingUrl      string `json:"following_url"`
 	GistsUrl          string `json:"gists_url"`
@@ -1334,22 +1229,22 @@ func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 	{
 		const prefix string = ",\"id\":"
 		out.RawString(prefix)
-		out.Int(int(in.Id))
+		out.Int(int(in.ID))
 	}
 	{
 		const prefix string = ",\"avatar_url\":"
 		out.RawString(prefix)
-		out.String(string(in.AvatarUrl))
+		out.String(string(in.AvatarURL))
 	}
 	{
 		const prefix string = ",\"url\":"
 		out.RawString(prefix)
-		out.String(string(in.Url))
+		out.String(string(in.URL))
 	}
 	{
 		const prefix string = ",\"html_url\":"
 		out.RawString(prefix)
-		out.String(string(in.HtmlUrl))
+		out.String(string(in.HTMLURL))
 	}
 	{
 		const prefix string = ",\"followers_url\":"
@@ -1407,4 +1302,109 @@ func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 		out.Bool(bool(in.SiteAdmin))
 	}
 	out.RawByte('}')
+}
+func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(in *jlexer.Lexer, out *Result) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "User":
+			(out.User).UnmarshalEasyJSON(in)
+		case "Stars":
+			if in.IsNull() {
+				in.Skip()
+				out.Stars = nil
+			} else {
+				in.Delim('[')
+				if out.Stars == nil {
+					if !in.IsDelim(']') {
+						out.Stars = make([]Star, 0, 0)
+					} else {
+						out.Stars = []Star{}
+					}
+				} else {
+					out.Stars = (out.Stars)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v4 Star
+					(v4).UnmarshalEasyJSON(in)
+					out.Stars = append(out.Stars, v4)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(out *jwriter.Writer, in Result) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"User\":"
+		out.RawString(prefix[1:])
+		(in.User).MarshalEasyJSON(out)
+	}
+	{
+		const prefix string = ",\"Stars\":"
+		out.RawString(prefix)
+		if in.Stars == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+			out.RawString("null")
+		} else {
+			out.RawByte('[')
+			for v5, v6 := range in.Stars {
+				if v5 > 0 {
+					out.RawByte(',')
+				}
+				(v6).MarshalEasyJSON(out)
+			}
+			out.RawByte(']')
+		}
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v Result) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v Result) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub2(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *Result) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *Result) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub2(l, v)
 }
