@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -55,17 +55,18 @@ func (s *superStar) hLog(err error) *zerolog.Logger {
 func (s *superStar) nextPage() (ok bool) {
 	ok = true
 	linkHeader := s.last.Header.Get("Link")
-	spl := strings.Split(linkHeader, ",")
+
+	remove := []string{",", ";", "<", ">", "rel=", "\""}
+	for _, rem := range remove {
+		linkHeader = strings.ReplaceAll(linkHeader, rem, "")
+	}
+	spl := strings.Split(linkHeader, " ")
 	for i, part := range spl {
-		part = strings.Trim(part, "<")
-		part = strings.Trim(part, "<")
-		part = strings.Trim(part, ";")
-		part = strings.TrimPrefix(part, "rel=")
-		part = strings.Trim(part, "\"")
-		part = strings.TrimSpace(part)
+		spl[i] = strings.TrimSpace(spl[i])
 		if len(spl) == i+1 {
 			break
 		}
+		fmt.Fprintf(os.Stdout, "%v", spl)
 		switch spl[i+1] {
 		case "next":
 			s.hLog(nil).Trace().Msgf("Next page: %s", part)
@@ -160,12 +161,13 @@ func main() {
 	if len(super.stars) < 1 {
 		log.Fatal().Caller().Msg("no stars found!")
 	}
-	for _, s := range super.stars {
-		ib, err := json.MarshalIndent(s, "", "\t")
-		if err != nil {
-			super.log.Fatal().Caller().Err(err).Msg("failed to pretty print")
+	/*	for _, s := range super.stars {
+			ib, err := json.MarshalIndent(s, "", "\t")
+			if err != nil {
+				super.log.Fatal().Caller().Err(err).Msg("failed to pretty print")
+			}
+			println(string(ib))
 		}
-		println(string(ib))
-	}
+	*/
 	super.log.Info().Int("count", len(super.stars)).Msg("fin")
 }
