@@ -1,11 +1,8 @@
-# ur a star!!!
+<h1 align="center">ur a star!!11</h1>
 
-retrieves github stars
+retrieves github stars wow
 
-### usage
+### Usage:
 
-  - make sure you're sitting down
-  - be all like
-	`go run ./ <username>`
-  - wow
+`urastar [-q/-v] <target> [target] [target] [...]`
 
