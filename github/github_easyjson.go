@@ -497,86 +497,39 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 				FullName string `json:"full_name"`
 				Private  bool   `json:"private"`
 				Owner    struct {
-					Login             string `json:"login"`
-					ID                int    `json:"id"`
-					AvatarURL         string `json:"avatar_url"`
-					URL               string `json:"url"`
-					HTMLURL           string `json:"html_url"`
-					FollowersURL      string `json:"followers_url"`
-					FollowingURL      string `json:"following_url"`
-					GistsURL          string `json:"gists_url"`
-					StarredURL        string `json:"starred_url"`
-					SubscriptionsURL  string `json:"subscriptions_url"`
-					OrganizationsURL  string `json:"organizations_url"`
-					ReposURL          string `json:"repos_url"`
-					EventsURL         string `json:"events_url"`
-					ReceivedEventsURL string `json:"received_events_url"`
-					Type              string `json:"type"`
-					SiteAdmin         bool   `json:"site_admin"`
+					Login     string `json:"login"`
+					ID        int    `json:"id"`
+					AvatarURL string `json:"avatar_url"`
+					HTMLURL   string `json:"html_url"`
+					Type      string `json:"type"`
+					SiteAdmin bool   `json:"site_admin"`
 				} `json:"owner"`
-				HTMLURL          string      `json:"html_url"`
-				Description      *string     `json:"description"`
-				Fork             bool        `json:"fork"`
-				URL              string      `json:"url"`
-				ForksURL         string      `json:"forks_url"`
-				KeysURL          string      `json:"keys_url"`
-				CollaboratorsURL string      `json:"collaborators_url"`
-				TeamsURL         string      `json:"teams_url"`
-				HooksURL         string      `json:"hooks_url"`
-				IssueEventsURL   string      `json:"issue_events_url"`
-				EventsURL        string      `json:"events_url"`
-				AssigneesURL     string      `json:"assignees_url"`
-				BranchesURL      string      `json:"branches_url"`
-				TagsURL          string      `json:"tags_url"`
-				BlobsURL         string      `json:"blobs_url"`
-				GitTagsURL       string      `json:"git_tags_url"`
-				GitRefsURL       string      `json:"git_refs_url"`
-				TreesURL         string      `json:"trees_url"`
-				StatusesURL      string      `json:"statuses_url"`
-				LanguagesURL     string      `json:"languages_url"`
-				StargazersURL    string      `json:"stargazers_url"`
-				ContributorsURL  string      `json:"contributors_url"`
-				SubscribersURL   string      `json:"subscribers_url"`
-				SubscriptionURL  string      `json:"subscription_url"`
-				CommitsURL       string      `json:"commits_url"`
-				GitCommitsURL    string      `json:"git_commits_url"`
-				CommentsURL      string      `json:"comments_url"`
-				IssueCommentURL  string      `json:"issue_comment_url"`
-				ContentsURL      string      `json:"contents_url"`
-				CompareURL       string      `json:"compare_url"`
-				MergesURL        string      `json:"merges_url"`
-				ArchiveURL       string      `json:"archive_url"`
-				DownloadsURL     string      `json:"downloads_url"`
-				IssuesURL        string      `json:"issues_url"`
-				PullsURL         string      `json:"pulls_url"`
-				MilestonesURL    string      `json:"milestones_url"`
-				NotificationsURL string      `json:"notifications_url"`
-				LabelsURL        string      `json:"labels_url"`
-				ReleasesURL      string      `json:"releases_url"`
-				DeploymentsURL   string      `json:"deployments_url"`
-				CreatedAt        time.Time   `json:"created_at"`
-				UpdatedAt        time.Time   `json:"updated_at"`
-				PushedAt         time.Time   `json:"pushed_at"`
-				GitURL           string      `json:"git_url"`
-				SSHURL           string      `json:"ssh_url"`
-				CloneURL         string      `json:"clone_url"`
-				SvnURL           string      `json:"svn_url"`
-				Homepage         *string     `json:"homepage"`
-				Size             int         `json:"size"`
-				StargazersCount  int         `json:"stargazers_count"`
-				WatchersCount    int         `json:"watchers_count"`
-				Language         *string     `json:"language"`
-				HasIssues        bool        `json:"has_issues"`
-				HasProjects      bool        `json:"has_projects"`
-				HasDownloads     bool        `json:"has_downloads"`
-				HasWiki          bool        `json:"has_wiki"`
-				HasPages         bool        `json:"has_pages"`
-				ForksCount       int         `json:"forks_count"`
-				MirrorURL        interface{} `json:"mirror_url"`
-				Archived         bool        `json:"archived"`
-				Disabled         bool        `json:"disabled"`
-				OpenIssuesCount  int         `json:"open_issues_count"`
-				License          *struct {
+				HTMLURL         string    `json:"html_url"`
+				Description     *string   `json:"description"`
+				Fork            bool      `json:"fork"`
+				URL             string    `json:"url"`
+				CreatedAt       time.Time `json:"created_at"`
+				UpdatedAt       time.Time `json:"updated_at"`
+				PushedAt        time.Time `json:"pushed_at"`
+				GitURL          string    `json:"git_url"`
+				SSHURL          string    `json:"ssh_url"`
+				CloneURL        string    `json:"clone_url"`
+				SvnURL          string    `json:"svn_url"`
+				Homepage        *string   `json:"homepage"`
+				Size            int       `json:"size"`
+				StargazersCount int       `json:"stargazers_count"`
+				WatchersCount   int       `json:"watchers_count"`
+				Language        *string   `json:"language"`
+				HasIssues       bool      `json:"has_issues"`
+				HasProjects     bool      `json:"has_projects"`
+				HasDownloads    bool      `json:"has_downloads"`
+				HasWiki         bool      `json:"has_wiki"`
+				HasPages        bool      `json:"has_pages"`
+				ForksCount      int       `json:"forks_count"`
+				Archived        bool      `json:"archived"`
+				Disabled        bool      `json:"disabled"`
+				OpenIssuesCount int       `json:"open_issues_count"`
+				License         *struct {
 					Key    string  `json:"key"`
 					Name   string  `json:"name"`
 					SpdxID string  `json:"spdx_id"`
@@ -647,86 +600,39 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 	FullName string `json:"full_name"`
 	Private  bool   `json:"private"`
 	Owner    struct {
-		Login             string `json:"login"`
-		ID                int    `json:"id"`
-		AvatarURL         string `json:"avatar_url"`
-		URL               string `json:"url"`
-		HTMLURL           string `json:"html_url"`
-		FollowersURL      string `json:"followers_url"`
-		FollowingURL      string `json:"following_url"`
-		GistsURL          string `json:"gists_url"`
-		StarredURL        string `json:"starred_url"`
-		SubscriptionsURL  string `json:"subscriptions_url"`
-		OrganizationsURL  string `json:"organizations_url"`
-		ReposURL          string `json:"repos_url"`
-		EventsURL         string `json:"events_url"`
-		ReceivedEventsURL string `json:"received_events_url"`
-		Type              string `json:"type"`
-		SiteAdmin         bool   `json:"site_admin"`
+		Login     string `json:"login"`
+		ID        int    `json:"id"`
+		AvatarURL string `json:"avatar_url"`
+		HTMLURL   string `json:"html_url"`
+		Type      string `json:"type"`
+		SiteAdmin bool   `json:"site_admin"`
 	} `json:"owner"`
-	HTMLURL          string      `json:"html_url"`
-	Description      *string     `json:"description"`
-	Fork             bool        `json:"fork"`
-	URL              string      `json:"url"`
-	ForksURL         string      `json:"forks_url"`
-	KeysURL          string      `json:"keys_url"`
-	CollaboratorsURL string      `json:"collaborators_url"`
-	TeamsURL         string      `json:"teams_url"`
-	HooksURL         string      `json:"hooks_url"`
-	IssueEventsURL   string      `json:"issue_events_url"`
-	EventsURL        string      `json:"events_url"`
-	AssigneesURL     string      `json:"assignees_url"`
-	BranchesURL      string      `json:"branches_url"`
-	TagsURL          string      `json:"tags_url"`
-	BlobsURL         string      `json:"blobs_url"`
-	GitTagsURL       string      `json:"git_tags_url"`
-	GitRefsURL       string      `json:"git_refs_url"`
-	TreesURL         string      `json:"trees_url"`
-	StatusesURL      string      `json:"statuses_url"`
-	LanguagesURL     string      `json:"languages_url"`
-	StargazersURL    string      `json:"stargazers_url"`
-	ContributorsURL  string      `json:"contributors_url"`
-	SubscribersURL   string      `json:"subscribers_url"`
-	SubscriptionURL  string      `json:"subscription_url"`
-	CommitsURL       string      `json:"commits_url"`
-	GitCommitsURL    string      `json:"git_commits_url"`
-	CommentsURL      string      `json:"comments_url"`
-	IssueCommentURL  string      `json:"issue_comment_url"`
-	ContentsURL      string      `json:"contents_url"`
-	CompareURL       string      `json:"compare_url"`
-	MergesURL        string      `json:"merges_url"`
-	ArchiveURL       string      `json:"archive_url"`
-	DownloadsURL     string      `json:"downloads_url"`
-	IssuesURL        string      `json:"issues_url"`
-	PullsURL         string      `json:"pulls_url"`
-	MilestonesURL    string      `json:"milestones_url"`
-	NotificationsURL string      `json:"notifications_url"`
-	LabelsURL        string      `json:"labels_url"`
-	ReleasesURL      string      `json:"releases_url"`
-	DeploymentsURL   string      `json:"deployments_url"`
-	CreatedAt        time.Time   `json:"created_at"`
-	UpdatedAt        time.Time   `json:"updated_at"`
-	PushedAt         time.Time   `json:"pushed_at"`
-	GitURL           string      `json:"git_url"`
-	SSHURL           string      `json:"ssh_url"`
-	CloneURL         string      `json:"clone_url"`
-	SvnURL           string      `json:"svn_url"`
-	Homepage         *string     `json:"homepage"`
-	Size             int         `json:"size"`
-	StargazersCount  int         `json:"stargazers_count"`
-	WatchersCount    int         `json:"watchers_count"`
-	Language         *string     `json:"language"`
-	HasIssues        bool        `json:"has_issues"`
-	HasProjects      bool        `json:"has_projects"`
-	HasDownloads     bool        `json:"has_downloads"`
-	HasWiki          bool        `json:"has_wiki"`
-	HasPages         bool        `json:"has_pages"`
-	ForksCount       int         `json:"forks_count"`
-	MirrorURL        interface{} `json:"mirror_url"`
-	Archived         bool        `json:"archived"`
-	Disabled         bool        `json:"disabled"`
-	OpenIssuesCount  int         `json:"open_issues_count"`
-	License          *struct {
+	HTMLURL         string    `json:"html_url"`
+	Description     *string   `json:"description"`
+	Fork            bool      `json:"fork"`
+	URL             string    `json:"url"`
+	CreatedAt       time.Time `json:"created_at"`
+	UpdatedAt       time.Time `json:"updated_at"`
+	PushedAt        time.Time `json:"pushed_at"`
+	GitURL          string    `json:"git_url"`
+	SSHURL          string    `json:"ssh_url"`
+	CloneURL        string    `json:"clone_url"`
+	SvnURL          string    `json:"svn_url"`
+	Homepage        *string   `json:"homepage"`
+	Size            int       `json:"size"`
+	StargazersCount int       `json:"stargazers_count"`
+	WatchersCount   int       `json:"watchers_count"`
+	Language        *string   `json:"language"`
+	HasIssues       bool      `json:"has_issues"`
+	HasProjects     bool      `json:"has_projects"`
+	HasDownloads    bool      `json:"has_downloads"`
+	HasWiki         bool      `json:"has_wiki"`
+	HasPages        bool      `json:"has_pages"`
+	ForksCount      int       `json:"forks_count"`
+	Archived        bool      `json:"archived"`
+	Disabled        bool      `json:"disabled"`
+	OpenIssuesCount int       `json:"open_issues_count"`
+	License         *struct {
 		Key    string  `json:"key"`
 		Name   string  `json:"name"`
 		SpdxID string  `json:"spdx_id"`
@@ -788,78 +694,6 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 			out.Fork = bool(in.Bool())
 		case "url":
 			out.URL = string(in.String())
-		case "forks_url":
-			out.ForksURL = string(in.String())
-		case "keys_url":
-			out.KeysURL = string(in.String())
-		case "collaborators_url":
-			out.CollaboratorsURL = string(in.String())
-		case "teams_url":
-			out.TeamsURL = string(in.String())
-		case "hooks_url":
-			out.HooksURL = string(in.String())
-		case "issue_events_url":
-			out.IssueEventsURL = string(in.String())
-		case "events_url":
-			out.EventsURL = string(in.String())
-		case "assignees_url":
-			out.AssigneesURL = string(in.String())
-		case "branches_url":
-			out.BranchesURL = string(in.String())
-		case "tags_url":
-			out.TagsURL = string(in.String())
-		case "blobs_url":
-			out.BlobsURL = string(in.String())
-		case "git_tags_url":
-			out.GitTagsURL = string(in.String())
-		case "git_refs_url":
-			out.GitRefsURL = string(in.String())
-		case "trees_url":
-			out.TreesURL = string(in.String())
-		case "statuses_url":
-			out.StatusesURL = string(in.String())
-		case "languages_url":
-			out.LanguagesURL = string(in.String())
-		case "stargazers_url":
-			out.StargazersURL = string(in.String())
-		case "contributors_url":
-			out.ContributorsURL = string(in.String())
-		case "subscribers_url":
-			out.SubscribersURL = string(in.String())
-		case "subscription_url":
-			out.SubscriptionURL = string(in.String())
-		case "commits_url":
-			out.CommitsURL = string(in.String())
-		case "git_commits_url":
-			out.GitCommitsURL = string(in.String())
-		case "comments_url":
-			out.CommentsURL = string(in.String())
-		case "issue_comment_url":
-			out.IssueCommentURL = string(in.String())
-		case "contents_url":
-			out.ContentsURL = string(in.String())
-		case "compare_url":
-			out.CompareURL = string(in.String())
-		case "merges_url":
-			out.MergesURL = string(in.String())
-		case "archive_url":
-			out.ArchiveURL = string(in.String())
-		case "downloads_url":
-			out.DownloadsURL = string(in.String())
-		case "issues_url":
-			out.IssuesURL = string(in.String())
-		case "pulls_url":
-			out.PullsURL = string(in.String())
-		case "milestones_url":
-			out.MilestonesURL = string(in.String())
-		case "notifications_url":
-			out.NotificationsURL = string(in.String())
-		case "labels_url":
-			out.LabelsURL = string(in.String())
-		case "releases_url":
-			out.ReleasesURL = string(in.String())
-		case "deployments_url":
-			out.DeploymentsURL = string(in.String())
 		case "created_at":
 			if data := in.Raw(); in.Ok() {
 				in.AddError((out.CreatedAt).UnmarshalJSON(data))
@@ -918,14 +752,6 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 			out.HasPages = bool(in.Bool())
 		case "forks_count":
 			out.ForksCount = int(in.Int())
-		case "mirror_url":
-			if m, ok := out.MirrorURL.(easyjson.Unmarshaler); ok {
-				m.UnmarshalEasyJSON(in)
-			} else if m, ok := out.MirrorURL.(json.Unmarshaler); ok {
-				_ = m.UnmarshalJSON(in.Raw())
-			} else {
-				out.MirrorURL = in.Interface()
-			}
 		case "archived":
 			out.Archived = bool(in.Bool())
 		case "disabled":
@@ -1002,86 +828,39 @@ func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 	FullName string `json:"full_name"`
 	Private  bool   `json:"private"`
 	Owner    struct {
-		Login             string `json:"login"`
-		ID                int    `json:"id"`
-		AvatarURL         string `json:"avatar_url"`
-		URL               string `json:"url"`
-		HTMLURL           string `json:"html_url"`
-		FollowersURL      string `json:"followers_url"`
-		FollowingURL      string `json:"following_url"`
-		GistsURL          string `json:"gists_url"`
-		StarredURL        string `json:"starred_url"`
-		SubscriptionsURL  string `json:"subscriptions_url"`
-		OrganizationsURL  string `json:"organizations_url"`
-		ReposURL          string `json:"repos_url"`
-		EventsURL         string `json:"events_url"`
-		ReceivedEventsURL string `json:"received_events_url"`
-		Type              string `json:"type"`
-		SiteAdmin         bool   `json:"site_admin"`
+		Login     string `json:"login"`
+		ID        int    `json:"id"`
+		AvatarURL string `json:"avatar_url"`
+		HTMLURL   string `json:"html_url"`
+		Type      string `json:"type"`
+		SiteAdmin bool   `json:"site_admin"`
 	} `json:"owner"`
-	HTMLURL          string      `json:"html_url"`
-	Description      *string     `json:"description"`
-	Fork             bool        `json:"fork"`
-	URL              string      `json:"url"`
-	ForksURL         string      `json:"forks_url"`
-	KeysURL          string      `json:"keys_url"`
-	CollaboratorsURL string      `json:"collaborators_url"`
-	TeamsURL         string      `json:"teams_url"`
-	HooksURL         string      `json:"hooks_url"`
-	IssueEventsURL   string      `json:"issue_events_url"`
-	EventsURL        string      `json:"events_url"`
-	AssigneesURL     string      `json:"assignees_url"`
-	BranchesURL      string      `json:"branches_url"`
-	TagsURL          string      `json:"tags_url"`
-	BlobsURL         string      `json:"blobs_url"`
-	GitTagsURL       string      `json:"git_tags_url"`
-	GitRefsURL       string      `json:"git_refs_url"`
-	TreesURL         string      `json:"trees_url"`
-	StatusesURL      string      `json:"statuses_url"`
-	LanguagesURL     string      `json:"languages_url"`
-	StargazersURL    string      `json:"stargazers_url"`
-	ContributorsURL  string      `json:"contributors_url"`
-	SubscribersURL   string      `json:"subscribers_url"`
-	SubscriptionURL  string      `json:"subscription_url"`
-	CommitsURL       string      `json:"commits_url"`
-	GitCommitsURL    string      `json:"git_commits_url"`
-	CommentsURL      string      `json:"comments_url"`
-	IssueCommentURL  string      `json:"issue_comment_url"`
-	ContentsURL      string      `json:"contents_url"`
-	CompareURL       string      `json:"compare_url"`
-	MergesURL        string      `json:"merges_url"`
-	ArchiveURL       string      `json:"archive_url"`
-	DownloadsURL     string      `json:"downloads_url"`
-	IssuesURL        string      `json:"issues_url"`
-	PullsURL         string      `json:"pulls_url"`
-	MilestonesURL    string      `json:"milestones_url"`
-	NotificationsURL string      `json:"notifications_url"`
-	LabelsURL        string      `json:"labels_url"`
-	ReleasesURL      string      `json:"releases_url"`
-	DeploymentsURL   string      `json:"deployments_url"`
-	CreatedAt        time.Time   `json:"created_at"`
-	UpdatedAt        time.Time   `json:"updated_at"`
-	PushedAt         time.Time   `json:"pushed_at"`
-	GitURL           string      `json:"git_url"`
-	SSHURL           string      `json:"ssh_url"`
-	CloneURL         string      `json:"clone_url"`
-	SvnURL           string      `json:"svn_url"`
-	Homepage         *string     `json:"homepage"`
-	Size             int         `json:"size"`
-	StargazersCount  int         `json:"stargazers_count"`
-	WatchersCount    int         `json:"watchers_count"`
-	Language         *string     `json:"language"`
-	HasIssues        bool        `json:"has_issues"`
-	HasProjects      bool        `json:"has_projects"`
-	HasDownloads     bool        `json:"has_downloads"`
-	HasWiki          bool        `json:"has_wiki"`
-	HasPages         bool        `json:"has_pages"`
-	ForksCount       int         `json:"forks_count"`
-	MirrorURL        interface{} `json:"mirror_url"`
-	Archived         bool        `json:"archived"`
-	Disabled         bool        `json:"disabled"`
-	OpenIssuesCount  int         `json:"open_issues_count"`
-	License          *struct {
+	HTMLURL         string    `json:"html_url"`
+	Description     *string   `json:"description"`
+	Fork            bool      `json:"fork"`
+	URL             string    `json:"url"`
+	CreatedAt       time.Time `json:"created_at"`
+	UpdatedAt       time.Time `json:"updated_at"`
+	PushedAt        time.Time `json:"pushed_at"`
+	GitURL          string    `json:"git_url"`
+	SSHURL          string    `json:"ssh_url"`
+	CloneURL        string    `json:"clone_url"`
+	SvnURL          string    `json:"svn_url"`
+	Homepage        *string   `json:"homepage"`
+	Size            int       `json:"size"`
+	StargazersCount int       `json:"stargazers_count"`
+	WatchersCount   int       `json:"watchers_count"`
+	Language        *string   `json:"language"`
+	HasIssues       bool      `json:"has_issues"`
+	HasProjects     bool      `json:"has_projects"`
+	HasDownloads    bool      `json:"has_downloads"`
+	HasWiki         bool      `json:"has_wiki"`
+	HasPages        bool      `json:"has_pages"`
+	ForksCount      int       `json:"forks_count"`
+	Archived        bool      `json:"archived"`
+	Disabled        bool      `json:"disabled"`
+	OpenIssuesCount int       `json:"open_issues_count"`
+	License         *struct {
 		Key    string  `json:"key"`
 		Name   string  `json:"name"`
 		SpdxID string  `json:"spdx_id"`
@@ -1195,366 +974,6 @@ func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 			out.RawString(prefix)
 		}
 		out.String(string(in.URL))
-	}
-	if in.ForksURL != "" {
-		const prefix string = ",\"forks_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ForksURL))
-	}
-	if in.KeysURL != "" {
-		const prefix string = ",\"keys_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.KeysURL))
-	}
-	if in.CollaboratorsURL != "" {
-		const prefix string = ",\"collaborators_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.CollaboratorsURL))
-	}
-	if in.TeamsURL != "" {
-		const prefix string = ",\"teams_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.TeamsURL))
-	}
-	if in.HooksURL != "" {
-		const prefix string = ",\"hooks_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.HooksURL))
-	}
-	if in.IssueEventsURL != "" {
-		const prefix string = ",\"issue_events_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.IssueEventsURL))
-	}
-	if in.EventsURL != "" {
-		const prefix string = ",\"events_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.EventsURL))
-	}
-	if in.AssigneesURL != "" {
-		const prefix string = ",\"assignees_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.AssigneesURL))
-	}
-	if in.BranchesURL != "" {
-		const prefix string = ",\"branches_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.BranchesURL))
-	}
-	if in.TagsURL != "" {
-		const prefix string = ",\"tags_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.TagsURL))
-	}
-	if in.BlobsURL != "" {
-		const prefix string = ",\"blobs_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.BlobsURL))
-	}
-	if in.GitTagsURL != "" {
-		const prefix string = ",\"git_tags_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.GitTagsURL))
-	}
-	if in.GitRefsURL != "" {
-		const prefix string = ",\"git_refs_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.GitRefsURL))
-	}
-	if in.TreesURL != "" {
-		const prefix string = ",\"trees_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.TreesURL))
-	}
-	if in.StatusesURL != "" {
-		const prefix string = ",\"statuses_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.StatusesURL))
-	}
-	if in.LanguagesURL != "" {
-		const prefix string = ",\"languages_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.LanguagesURL))
-	}
-	if in.StargazersURL != "" {
-		const prefix string = ",\"stargazers_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.StargazersURL))
-	}
-	if in.ContributorsURL != "" {
-		const prefix string = ",\"contributors_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ContributorsURL))
-	}
-	if in.SubscribersURL != "" {
-		const prefix string = ",\"subscribers_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.SubscribersURL))
-	}
-	if in.SubscriptionURL != "" {
-		const prefix string = ",\"subscription_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.SubscriptionURL))
-	}
-	if in.CommitsURL != "" {
-		const prefix string = ",\"commits_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.CommitsURL))
-	}
-	if in.GitCommitsURL != "" {
-		const prefix string = ",\"git_commits_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.GitCommitsURL))
-	}
-	if in.CommentsURL != "" {
-		const prefix string = ",\"comments_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.CommentsURL))
-	}
-	if in.IssueCommentURL != "" {
-		const prefix string = ",\"issue_comment_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.IssueCommentURL))
-	}
-	if in.ContentsURL != "" {
-		const prefix string = ",\"contents_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ContentsURL))
-	}
-	if in.CompareURL != "" {
-		const prefix string = ",\"compare_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.CompareURL))
-	}
-	if in.MergesURL != "" {
-		const prefix string = ",\"merges_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.MergesURL))
-	}
-	if in.ArchiveURL != "" {
-		const prefix string = ",\"archive_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ArchiveURL))
-	}
-	if in.DownloadsURL != "" {
-		const prefix string = ",\"downloads_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.DownloadsURL))
-	}
-	if in.IssuesURL != "" {
-		const prefix string = ",\"issues_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.IssuesURL))
-	}
-	if in.PullsURL != "" {
-		const prefix string = ",\"pulls_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.PullsURL))
-	}
-	if in.MilestonesURL != "" {
-		const prefix string = ",\"milestones_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.MilestonesURL))
-	}
-	if in.NotificationsURL != "" {
-		const prefix string = ",\"notifications_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.NotificationsURL))
-	}
-	if in.LabelsURL != "" {
-		const prefix string = ",\"labels_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.LabelsURL))
-	}
-	if in.ReleasesURL != "" {
-		const prefix string = ",\"releases_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ReleasesURL))
-	}
-	if in.DeploymentsURL != "" {
-		const prefix string = ",\"deployments_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.DeploymentsURL))
 	}
 	if true {
 		const prefix string = ",\"created_at\":"
@@ -1735,22 +1154,6 @@ func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 			out.RawString(prefix)
 		}
 		out.Int(int(in.ForksCount))
-	}
-	if in.MirrorURL != nil {
-		const prefix string = ",\"mirror_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		if m, ok := in.MirrorURL.(easyjson.Marshaler); ok {
-			m.MarshalEasyJSON(out)
-		} else if m, ok := in.MirrorURL.(json.Marshaler); ok {
-			out.Raw(m.MarshalJSON())
-		} else {
-			out.Raw(json.Marshal(in.MirrorURL))
-		}
 	}
 	if in.Archived {
 		const prefix string = ",\"archived\":"
@@ -1995,22 +1398,12 @@ func easyjson619ac83dEncode2(out *jwriter.Writer, in struct {
 	out.RawByte('}')
 }
 func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
-	Login             string `json:"login"`
-	ID                int    `json:"id"`
-	AvatarURL         string `json:"avatar_url"`
-	URL               string `json:"url"`
-	HTMLURL           string `json:"html_url"`
-	FollowersURL      string `json:"followers_url"`
-	FollowingURL      string `json:"following_url"`
-	GistsURL          string `json:"gists_url"`
-	StarredURL        string `json:"starred_url"`
-	SubscriptionsURL  string `json:"subscriptions_url"`
-	OrganizationsURL  string `json:"organizations_url"`
-	ReposURL          string `json:"repos_url"`
-	EventsURL         string `json:"events_url"`
-	ReceivedEventsURL string `json:"received_events_url"`
-	Type              string `json:"type"`
-	SiteAdmin         bool   `json:"site_admin"`
+	Login     string `json:"login"`
+	ID        int    `json:"id"`
+	AvatarURL string `json:"avatar_url"`
+	HTMLURL   string `json:"html_url"`
+	Type      string `json:"type"`
+	SiteAdmin bool   `json:"site_admin"`
 }) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
@@ -2036,28 +1429,8 @@ func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 			out.ID = int(in.Int())
 		case "avatar_url":
 			out.AvatarURL = string(in.String())
-		case "url":
-			out.URL = string(in.String())
 		case "html_url":
 			out.HTMLURL = string(in.String())
-		case "followers_url":
-			out.FollowersURL = string(in.String())
-		case "following_url":
-			out.FollowingURL = string(in.String())
-		case "gists_url":
-			out.GistsURL = string(in.String())
-		case "starred_url":
-			out.StarredURL = string(in.String())
-		case "subscriptions_url":
-			out.SubscriptionsURL = string(in.String())
-		case "organizations_url":
-			out.OrganizationsURL = string(in.String())
-		case "repos_url":
-			out.ReposURL = string(in.String())
-		case "events_url":
-			out.EventsURL = string(in.String())
-		case "received_events_url":
-			out.ReceivedEventsURL = string(in.String())
 		case "type":
 			out.Type = string(in.String())
 		case "site_admin":
@@ -2073,22 +1446,12 @@ func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 	}
 }
 func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
-	Login             string `json:"login"`
-	ID                int    `json:"id"`
-	AvatarURL         string `json:"avatar_url"`
-	URL               string `json:"url"`
-	HTMLURL           string `json:"html_url"`
-	FollowersURL      string `json:"followers_url"`
-	FollowingURL      string `json:"following_url"`
-	GistsURL          string `json:"gists_url"`
-	StarredURL        string `json:"starred_url"`
-	SubscriptionsURL  string `json:"subscriptions_url"`
-	OrganizationsURL  string `json:"organizations_url"`
-	ReposURL          string `json:"repos_url"`
-	EventsURL         string `json:"events_url"`
-	ReceivedEventsURL string `json:"received_events_url"`
-	Type              string `json:"type"`
-	SiteAdmin         bool   `json:"site_admin"`
+	Login     string `json:"login"`
+	ID        int    `json:"id"`
+	AvatarURL string `json:"avatar_url"`
+	HTMLURL   string `json:"html_url"`
+	Type      string `json:"type"`
+	SiteAdmin bool   `json:"site_admin"`
 }) {
 	out.RawByte('{')
 	first := true
@@ -2119,16 +1482,6 @@ func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
 		}
 		out.String(string(in.AvatarURL))
 	}
-	if in.URL != "" {
-		const prefix string = ",\"url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.URL))
-	}
 	if in.HTMLURL != "" {
 		const prefix string = ",\"html_url\":"
 		if first {
@@ -2138,96 +1491,6 @@ func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
 			out.RawString(prefix)
 		}
 		out.String(string(in.HTMLURL))
-	}
-	if in.FollowersURL != "" {
-		const prefix string = ",\"followers_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.FollowersURL))
-	}
-	if in.FollowingURL != "" {
-		const prefix string = ",\"following_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.FollowingURL))
-	}
-	if in.GistsURL != "" {
-		const prefix string = ",\"gists_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.GistsURL))
-	}
-	if in.StarredURL != "" {
-		const prefix string = ",\"starred_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.StarredURL))
-	}
-	if in.SubscriptionsURL != "" {
-		const prefix string = ",\"subscriptions_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.SubscriptionsURL))
-	}
-	if in.OrganizationsURL != "" {
-		const prefix string = ",\"organizations_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.OrganizationsURL))
-	}
-	if in.ReposURL != "" {
-		const prefix string = ",\"repos_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ReposURL))
-	}
-	if in.EventsURL != "" {
-		const prefix string = ",\"events_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.EventsURL))
-	}
-	if in.ReceivedEventsURL != "" {
-		const prefix string = ",\"received_events_url\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.ReceivedEventsURL))
 	}
 	if in.Type != "" {
 		const prefix string = ",\"type\":"
