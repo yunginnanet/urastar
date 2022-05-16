@@ -18,7 +18,7 @@ type superStar struct {
 	name      string
 	stars     github.Stars
 	log       *zerolog.Logger
-	page, max int
+	page, max string
 	last      *http.Response
 }
 
@@ -27,15 +27,14 @@ func init() {
 		println("need target username")
 		os.Exit(1)
 	}
-
 }
 
 func (s *superStar) hLog(err error) *zerolog.Logger {
 	switch {
 	case err != nil:
-		log.Fatal().Msg(err.Error())
+		s.log.Fatal().Caller(1).Msg(err.Error())
 	case s.last == nil:
-		log.Fatal().Msg("nil response")
+		s.log.Fatal().Caller().Msg("nil response")
 	case s.last.StatusCode > 0:
 		l := s.log.With().
 			Str("caller", s.last.Request.URL.String()).
@@ -53,9 +52,9 @@ func (s *superStar) hLog(err error) *zerolog.Logger {
 
 // <https://api.github.com/user/49010538/starred?page=2>; rel="next", <https://api.github.com/user/49010538/starred?page=22>; rel="last"
 
-func nextPage(linkHeader string) (next string) {
-	next = ""
-	var last = ""
+func (s *superStar) nextPage() (ok bool) {
+	ok = true
+	linkHeader := s.last.Header.Get("Link")
 	spl := strings.Split(linkHeader, ",")
 	for i, part := range spl {
 		part = strings.Trim(part, "<")
@@ -69,84 +68,77 @@ func nextPage(linkHeader string) (next string) {
 		}
 		switch spl[i+1] {
 		case "next":
-			next = part
+			s.hLog(nil).Trace().Msgf("Next page: %s", part)
+			s.page = part
+			ok = false
 		case "prev":
 			continue
 		case "last":
-			last = part
+			if len(s.max) < 1 {
+				s.hLog(nil).Trace().Msgf("Last page: %s", part)
+				s.max = part
+			}
 		}
-	}
-	if next == last {
-		next = ""
 	}
 	return
 }
 
-func (s *superStar) mustHandleBody(r *http.Response) (stars github.Stars, next string) {
+func (s *superStar) mustHandleBody() (stars github.Stars) {
 	var result = new(github.Stars)
-	bb, rErr := io.ReadAll(r.Body)
+	bb, rErr := io.ReadAll(s.last.Body)
 	slog := s.hLog(rErr)
 	// slog.Trace().Str("body", string(bb)).Msg("successful GET body")
 	err := result.UnmarshalJSON(bb)
 	if err != nil {
-		slog.Fatal().Err(err).Msg("failed to read JSON")
+		slog.Fatal().Caller(1).Err(err).Msg("failed to read JSON")
 	}
-	next = nextPage(r.Header.Get("Link"))
-	return *result, next
+	return *result
 }
 
-func (s *superStar) get(r any) *http.Response {
+func (s *superStar) get() *http.Response {
 	var jrq *http.Request
-	rs, rok := r.(*http.Response)
-	rstr, strok := r.(string)
-	switch {
-	case rok:
-		jrq, _ = http.NewRequest(http.MethodGet, rs.Request.URL.String(), nil)
-	case strok:
-		jrq, _ = http.NewRequest(http.MethodGet, rstr, nil)
-	default:
-		log.Panic().Interface("caller", r).Msg("bad type")
+	var err error
+	jrq, err = http.NewRequest(http.MethodGet, s.page, nil)
+	if err != nil {
+		log.Panic().Caller().Msg(err.Error())
 	}
 	if jrq == nil {
 		return nil
 	}
 	jrq.Header.Set("Accept", "application/json")
 	jrq.Header.Set("User-Agent", "yunginnanet/urastar 0.1")
-	var err error
 	s.last, err = http.DefaultClient.Do(jrq)
 	s.hLog(err).Trace().Msg("Get success")
 	return s.last
 }
 
-func (s *superStar) getAllStars(r *http.Response) (userStars []github.Stars) {
+func (s *superStar) getAllStars() {
 	var (
-		done      = false
 		moreStars github.Stars
-		next      string
-		ok        bool
+		done      bool
 	)
-	s.hLog(nil).Trace().Interface("headers", r.Header).Msg("successful GET headers")
-	moreStars, next = s.mustHandleBody(s.get(r))
-	userStars = append(userStars, moreStars)
-	if !ok || next == "" {
-		return userStars
-	}
+	s.hLog(nil).Trace().Interface("headers", s.last.Header).Msg("successful GET headers")
+	s.page = s.last.Request.URL.String()
+	s.get()
+	moreStars = s.mustHandleBody()
+	s.stars = append(s.stars, moreStars...)
+
 	for {
+		done = s.nextPage()
 		switch {
-		case next == "":
-			done = true
+		case done:
+			fallthrough
 		default:
-			if next != "" {
-				moreStars, next = s.mustHandleBody(s.get(next))
-			}
-			userStars = append(userStars, moreStars)
-			s.hLog(nil).Info().Int("count", len(userStars)).Msg("successfully added more stars")
+			s.get()
+			moreStars = s.mustHandleBody()
 		}
+		s.stars = append(s.stars, moreStars...)
+		s.hLog(nil).Info().Int("count", len(s.stars)).Msg("successfully added more stars")
 		if done {
 			break
 		}
+		time.Sleep(500 * time.Millisecond)
 	}
-	return
 }
 
 func main() {
@@ -160,18 +152,20 @@ func main() {
 		log:  &l,
 	}
 	target := github.URLStarsFromName(os.Args[1])
-	r, err := http.DefaultClient.Head(target)
+	var err error
+	super.last, err = http.DefaultClient.Head(target)
 	super.hLog(err)
 	super.log.Debug().Msg("stage 1 success")
-	allStars := super.getAllStars(super.get(r))
-	if len(allStars) < 1 {
+	super.getAllStars()
+	if len(super.stars) < 1 {
 		log.Fatal().Caller().Msg("no stars found!")
 	}
-	for _, s := range allStars {
+	for _, s := range super.stars {
 		ib, err := json.MarshalIndent(s, "", "\t")
 		if err != nil {
 			super.log.Fatal().Caller().Err(err).Msg("failed to pretty print")
 		}
 		println(string(ib))
 	}
+	super.log.Info().Int("count", len(super.stars)).Msg("fin")
 }
