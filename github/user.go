@@ -4,19 +4,19 @@ import "time"
 
 type User struct {
 	Login             string      `json:"login"`
-	Id                int         `json:"id"`
+	ID                int         `json:"id"`
 	AvatarURL         string      `json:"avatar_url"`
-	Url               string      `json:"url"`
+	URL               string      `json:"url"`
 	HTMLURL           string      `json:"html_url"`
-	FollowersUrl      string      `json:"followers_url"`
-	FollowingUrl      string      `json:"following_url"`
-	GistsUrl          string      `json:"gists_url"`
-	StarredUrl        string      `json:"starred_url"`
-	SubscriptionsUrl  string      `json:"subscriptions_url"`
-	OrganizationsUrl  string      `json:"organizations_url"`
-	ReposUrl          string      `json:"repos_url"`
-	EventsUrl         string      `json:"events_url"`
-	ReceivedEventsUrl string      `json:"received_events_url"`
+	FollowersURL      string      `json:"followers_url"`
+	FollowingURL      string      `json:"following_url"`
+	GistsURL          string      `json:"gists_url"`
+	StarredURL        string      `json:"starred_url"`
+	SubscriptionsURL  string      `json:"subscriptions_url"`
+	OrganizationsURL  string      `json:"organizations_url"`
+	ReposURL          string      `json:"repos_url"`
+	EventsURL         string      `json:"events_url"`
+	ReceivedEventsURL string      `json:"received_events_url"`
 	Type              string      `json:"type"`
 	SiteAdmin         bool        `json:"site_admin"`
 	Name              string      `json:"name"`

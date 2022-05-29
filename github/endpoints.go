@@ -9,13 +9,13 @@ const EndpointUser = EndpointBase + "users/%s"
 const EndpointStars = EndpointUser + "/starred"
 const EndpointRepoSearch = EndpointBase + "search/repositories?q=%s&l=%s&page=%d&per_page=%d&sort=%v&order=%v"
 
-type SortBy string
+type RepoSearchSort string
 
 const (
-	SortBestMatch SortBy = ""
-	SortForks     SortBy = "forks"
-	SortUpdated   SortBy = "updated"
-	SortStars     SortBy = "stars"
+	SortBestMatch RepoSearchSort = ""
+	SortForks     RepoSearchSort = "forks"
+	SortUpdated   RepoSearchSort = "updated"
+	SortStars     RepoSearchSort = "stars"
 )
 
 type SortOrder string
@@ -25,15 +25,11 @@ const (
 	Descending SortOrder = "desc"
 )
 
-func URLFromName(s string) string {
-	return fmt.Sprintf(EndpointUser, s)
-}
-
 func URLStarsFromName(s string) string {
 	return fmt.Sprintf(EndpointStars, s)
 }
 
-func URLSearchRepos(query, language string, page, limit int, sort SortBy, order SortOrder) string {
+func URLSearchRepos(query, language string, page, limit int, sort RepoSearchSort, order SortOrder) string {
 	return fmt.Sprintf(
 		EndpointRepoSearch,
 		query, language,

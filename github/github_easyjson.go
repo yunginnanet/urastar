@@ -40,31 +40,31 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub(in *jlexer.Lexer, out 
 		case "login":
 			out.Login = string(in.String())
 		case "id":
-			out.Id = int(in.Int())
+			out.ID = int(in.Int())
 		case "avatar_url":
 			out.AvatarURL = string(in.String())
 		case "url":
-			out.Url = string(in.String())
+			out.URL = string(in.String())
 		case "html_url":
 			out.HTMLURL = string(in.String())
 		case "followers_url":
-			out.FollowersUrl = string(in.String())
+			out.FollowersURL = string(in.String())
 		case "following_url":
-			out.FollowingUrl = string(in.String())
+			out.FollowingURL = string(in.String())
 		case "gists_url":
-			out.GistsUrl = string(in.String())
+			out.GistsURL = string(in.String())
 		case "starred_url":
-			out.StarredUrl = string(in.String())
+			out.StarredURL = string(in.String())
 		case "subscriptions_url":
-			out.SubscriptionsUrl = string(in.String())
+			out.SubscriptionsURL = string(in.String())
 		case "organizations_url":
-			out.OrganizationsUrl = string(in.String())
+			out.OrganizationsURL = string(in.String())
 		case "repos_url":
-			out.ReposUrl = string(in.String())
+			out.ReposURL = string(in.String())
 		case "events_url":
-			out.EventsUrl = string(in.String())
+			out.EventsURL = string(in.String())
 		case "received_events_url":
-			out.ReceivedEventsUrl = string(in.String())
+			out.ReceivedEventsURL = string(in.String())
 		case "type":
 			out.Type = string(in.String())
 		case "site_admin":
@@ -139,7 +139,7 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		out.RawString(prefix[1:])
 		out.String(string(in.Login))
 	}
-	if in.Id != 0 {
+	if in.ID != 0 {
 		const prefix string = ",\"id\":"
 		if first {
 			first = false
@@ -147,7 +147,7 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.Int(int(in.Id))
+		out.Int(int(in.ID))
 	}
 	if in.AvatarURL != "" {
 		const prefix string = ",\"avatar_url\":"
@@ -159,7 +159,7 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		}
 		out.String(string(in.AvatarURL))
 	}
-	if in.Url != "" {
+	if in.URL != "" {
 		const prefix string = ",\"url\":"
 		if first {
 			first = false
@@ -167,7 +167,7 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Url))
+		out.String(string(in.URL))
 	}
 	if in.HTMLURL != "" {
 		const prefix string = ",\"html_url\":"
@@ -179,7 +179,7 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		}
 		out.String(string(in.HTMLURL))
 	}
-	if in.FollowersUrl != "" {
+	if in.FollowersURL != "" {
 		const prefix string = ",\"followers_url\":"
 		if first {
 			first = false
@@ -187,9 +187,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.FollowersUrl))
+		out.String(string(in.FollowersURL))
 	}
-	if in.FollowingUrl != "" {
+	if in.FollowingURL != "" {
 		const prefix string = ",\"following_url\":"
 		if first {
 			first = false
@@ -197,9 +197,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.FollowingUrl))
+		out.String(string(in.FollowingURL))
 	}
-	if in.GistsUrl != "" {
+	if in.GistsURL != "" {
 		const prefix string = ",\"gists_url\":"
 		if first {
 			first = false
@@ -207,9 +207,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.GistsUrl))
+		out.String(string(in.GistsURL))
 	}
-	if in.StarredUrl != "" {
+	if in.StarredURL != "" {
 		const prefix string = ",\"starred_url\":"
 		if first {
 			first = false
@@ -217,9 +217,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.StarredUrl))
+		out.String(string(in.StarredURL))
 	}
-	if in.SubscriptionsUrl != "" {
+	if in.SubscriptionsURL != "" {
 		const prefix string = ",\"subscriptions_url\":"
 		if first {
 			first = false
@@ -227,9 +227,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.SubscriptionsUrl))
+		out.String(string(in.SubscriptionsURL))
 	}
-	if in.OrganizationsUrl != "" {
+	if in.OrganizationsURL != "" {
 		const prefix string = ",\"organizations_url\":"
 		if first {
 			first = false
@@ -237,9 +237,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.OrganizationsUrl))
+		out.String(string(in.OrganizationsURL))
 	}
-	if in.ReposUrl != "" {
+	if in.ReposURL != "" {
 		const prefix string = ",\"repos_url\":"
 		if first {
 			first = false
@@ -247,9 +247,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.ReposUrl))
+		out.String(string(in.ReposURL))
 	}
-	if in.EventsUrl != "" {
+	if in.EventsURL != "" {
 		const prefix string = ",\"events_url\":"
 		if first {
 			first = false
@@ -257,9 +257,9 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.EventsUrl))
+		out.String(string(in.EventsURL))
 	}
-	if in.ReceivedEventsUrl != "" {
+	if in.ReceivedEventsURL != "" {
 		const prefix string = ",\"received_events_url\":"
 		if first {
 			first = false
@@ -267,7 +267,7 @@ func easyjson619ac83dEncodeGitTcpDirectKayosUrastarGithub(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.ReceivedEventsUrl))
+		out.String(string(in.ReceivedEventsURL))
 	}
 	if in.Type != "" {
 		const prefix string = ",\"type\":"
@@ -500,6 +500,7 @@ func easyjson619ac83dDecodeGitTcpDirectKayosUrastarGithub1(in *jlexer.Lexer, out
 					Login     string `json:"login"`
 					ID        int    `json:"id"`
 					AvatarURL string `json:"avatar_url"`
+					URL       string `json:"url"`
 					HTMLURL   string `json:"html_url"`
 					Type      string `json:"type"`
 					SiteAdmin bool   `json:"site_admin"`
@@ -603,6 +604,7 @@ func easyjson619ac83dDecode(in *jlexer.Lexer, out *struct {
 		Login     string `json:"login"`
 		ID        int    `json:"id"`
 		AvatarURL string `json:"avatar_url"`
+		URL       string `json:"url"`
 		HTMLURL   string `json:"html_url"`
 		Type      string `json:"type"`
 		SiteAdmin bool   `json:"site_admin"`
@@ -831,6 +833,7 @@ func easyjson619ac83dEncode(out *jwriter.Writer, in struct {
 		Login     string `json:"login"`
 		ID        int    `json:"id"`
 		AvatarURL string `json:"avatar_url"`
+		URL       string `json:"url"`
 		HTMLURL   string `json:"html_url"`
 		Type      string `json:"type"`
 		SiteAdmin bool   `json:"site_admin"`
@@ -1401,6 +1404,7 @@ func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 	Login     string `json:"login"`
 	ID        int    `json:"id"`
 	AvatarURL string `json:"avatar_url"`
+	URL       string `json:"url"`
 	HTMLURL   string `json:"html_url"`
 	Type      string `json:"type"`
 	SiteAdmin bool   `json:"site_admin"`
@@ -1429,6 +1433,8 @@ func easyjson619ac83dDecode1(in *jlexer.Lexer, out *struct {
 			out.ID = int(in.Int())
 		case "avatar_url":
 			out.AvatarURL = string(in.String())
+		case "url":
+			out.URL = string(in.String())
 		case "html_url":
 			out.HTMLURL = string(in.String())
 		case "type":
@@ -1449,6 +1455,7 @@ func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
 	Login     string `json:"login"`
 	ID        int    `json:"id"`
 	AvatarURL string `json:"avatar_url"`
+	URL       string `json:"url"`
 	HTMLURL   string `json:"html_url"`
 	Type      string `json:"type"`
 	SiteAdmin bool   `json:"site_admin"`
@@ -1481,6 +1488,16 @@ func easyjson619ac83dEncode1(out *jwriter.Writer, in struct {
 			out.RawString(prefix)
 		}
 		out.String(string(in.AvatarURL))
+	}
+	if in.URL != "" {
+		const prefix string = ",\"url\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.URL))
 	}
 	if in.HTMLURL != "" {
 		const prefix string = ",\"html_url\":"
